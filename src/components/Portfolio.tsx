@@ -1,41 +1,66 @@
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
+import ProjectLightbox from "./ProjectLightbox";
+
+// Import portfolio images
+import fezinnHotel from "@/assets/portfolio/fezinn-hotel.jpg";
+import marrakeshRestaurant from "@/assets/portfolio/marrakesh-restaurant.jpg";
+import fezcafeCricket from "@/assets/portfolio/fezcafe-cricket.jpg";
+import happyOnam from "@/assets/portfolio/happy-onam.png";
+import fezinnHospitality from "@/assets/portfolio/fezinn-hospitality.jpg";
+
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging"];
-const projects = [{
-  title: "Brand Identity System",
-  category: "Branding",
-  description: "Complete visual identity for a local business",
-  color: "from-orange-500/20 to-red-500/20"
-}, {
-  title: "Social Campaign",
-  category: "Social Media",
-  description: "Engaging social media campaign designs",
-  color: "from-blue-500/20 to-purple-500/20"
-}, {
-  title: "Magazine Advertisement",
-  category: "Print",
-  description: "Full-page magazine ad design",
-  color: "from-green-500/20 to-teal-500/20"
-}, {
-  title: "Product Packaging",
-  category: "Packaging",
-  description: "Premium product packaging design",
-  color: "from-pink-500/20 to-rose-500/20"
-}, {
-  title: "Corporate Brochure",
-  category: "Print",
-  description: "Multi-page corporate brochure",
-  color: "from-amber-500/20 to-yellow-500/20"
-}, {
-  title: "Logo Collection",
-  category: "Branding",
-  description: "Various logo designs for startups",
-  color: "from-cyan-500/20 to-blue-500/20"
-}];
+
+const projects = [
+  {
+    title: "Fez Inn Hotel Promotion",
+    category: "Social Media",
+    description: "Limited time offer promotional design for hotel booking campaign",
+    image: fezinnHotel,
+  },
+  {
+    title: "Marrakesh Saturday Buffet",
+    category: "Social Media",
+    description: "Eye-catching dinner buffet promotion for restaurant",
+    image: marrakeshRestaurant,
+  },
+  {
+    title: "Fezcafe Cricket World Cup",
+    category: "Social Media",
+    description: "Event promotion design for cricket screening event",
+    image: fezcafeCricket,
+  },
+  {
+    title: "Happy Onam Greeting",
+    category: "Social Media",
+    description: "Festival greeting design for Power Kings Club",
+    image: happyOnam,
+  },
+  {
+    title: "Fezinn Hospitality Careers",
+    category: "Print",
+    description: "Career and education promotional design",
+    image: fezinnHospitality,
+  },
+];
+
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const filteredProjects = activeCategory === "All" ? projects : projects.filter(p => p.category === activeCategory);
-  return <section id="portfolio" className="section-padding bg-card/30">
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
+
+  const handleProjectClick = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setLightboxOpen(true);
+  };
+
+  return (
+    <section id="portfolio" className="section-padding bg-card/30">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -52,21 +77,36 @@ const Portfolio = () => {
 
         {/* Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map(category => <button key={category} onClick={() => setActiveCategory(category)} className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"}`}>
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
+                activeCategory === category
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+              }`}
+            >
               {category}
-            </button>)}
+            </button>
+          ))}
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => <div key={index} className="group rounded-2xl overflow-hidden hover-lift cursor-pointer">
-              {/* Project Image Placeholder */}
-              <div className={`aspect-[4/3] bg-gradient-to-br ${project.color} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-                  <span className="font-display text-2xl font-bold text-foreground/30">
-                    {project.category}
-                  </span>
-                </div>
+          {filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              onClick={() => handleProjectClick(project)}
+              className="group rounded-2xl overflow-hidden hover-lift cursor-pointer"
+            >
+              {/* Project Image */}
+              <div className="aspect-[4/3] relative overflow-hidden bg-secondary">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-primary/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="text-center p-6">
@@ -89,17 +129,32 @@ const Portfolio = () => {
                   {project.description}
                 </p>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         {/* View More */}
         <div className="text-center mt-12">
-          <a href="https://behance.net/jabirmuhamme" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-body font-medium hover:underline underline-offset-4">
+          <a
+            href="https://behance.net/jabirmuhamme"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary font-body font-medium hover:underline underline-offset-4"
+          >
             View more on Behance
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       </div>
-    </section>;
+
+      {/* Lightbox */}
+      <ProjectLightbox
+        project={selectedProject}
+        open={lightboxOpen}
+        onOpenChange={setLightboxOpen}
+      />
+    </section>
+  );
 };
+
 export default Portfolio;
