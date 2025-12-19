@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+
 const navLinks = [{
   name: "About",
   href: "#about"
@@ -17,9 +19,13 @@ const navLinks = [{
   name: "Contact",
   href: "#contact"
 }];
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -27,21 +33,22 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-4" : "bg-transparent py-6"}`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-bold font-sans text-3xl">
+        <Link to="/" className="font-bold font-sans text-3xl">
           ​Jabir Portfolio    <span className="text-primary">.</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(link => <a key={link.name} href={link.href} className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors relative group">
+          {isHomePage && navLinks.map(link => <a key={link.name} href={link.href} className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors relative group">
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </a>)}
           <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Hire Me</a>
+            <Link to="/hire-me">Hire Me</Link>
           </Button>
         </div>
 
@@ -54,13 +61,13 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 py-6">
           <div className="flex flex-col items-center gap-6">
-            {navLinks.map(link => <a key={link.name} href={link.href} className="font-body text-lg text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+            {isHomePage && navLinks.map(link => <a key={link.name} href={link.href} className="font-body text-lg text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                 {link.name}
               </a>)}
             <Button variant="hero" asChild>
-              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link to="/hire-me" onClick={() => setIsMobileMenuOpen(false)}>
                 Hire Me
-              </a>
+              </Link>
             </Button>
           </div>
         </div>}
