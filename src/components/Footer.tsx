@@ -1,7 +1,7 @@
 const Footer = () => {
   return <footer className="py-8 px-6 border-t border-border/50">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="font-display font-bold text-sm">Jabir Portfolio <span className="text-primary">.</span>
+        <div className="font-body font-bold text-sm">Jabir Portfolio <span className="text-primary">.</span>
         </div>
         <p className="text-muted-foreground font-body text-sm text-center">
           © {new Date().getFullYear()} Muhammed Jabir A K. All rights reserved.
