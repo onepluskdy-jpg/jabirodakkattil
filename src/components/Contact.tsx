@@ -16,7 +16,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 border">
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="glass-card rounded-2xl p-8">
@@ -62,7 +62,7 @@ const Contact = () => {
                   Behance
                   <ExternalLink className="w-4 h-4" />
                 </a>
-                <a href="https://instagram.com/jabirmuhamme" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all font-body font-medium">
+                <a target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all font-body font-medium" href="https://instagram.com/jabir.mkm">
                   Instagram
                   <ExternalLink className="w-4 h-4" />
                 </a>
@@ -71,7 +71,7 @@ const Contact = () => {
           </div>
 
           {/* CTA Card */}
-          <div className="glass-card p-8 md:p-12 flex flex-col justify-center relative overflow-hidden rounded-full">
+          <div className="glass-card p-8 md:p-12 relative overflow-hidden rounded-full flex-col flex items-center justify-center px-0 py-0">
             {/* Background decoration */}
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute -left-20 -bottom-20 w-48 h-48 bg-primary/5 rounded-full blur-3xl" />
