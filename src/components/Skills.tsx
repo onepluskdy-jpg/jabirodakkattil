@@ -39,6 +39,9 @@ const tools = [{
   name: "Illustrator",
   level: 95
 }, {
+  name: "CorelDRAW",
+  level: 95
+}, {
   name: "InDesign",
   level: 85
 }, {
