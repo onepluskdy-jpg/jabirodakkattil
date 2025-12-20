@@ -1,22 +1,34 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, Sparkles } from "lucide-react";
+import { ArrowDown, Mail, Sparkles, Star, Zap } from "lucide-react";
 import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
-  return <section className="min-h-screen flex flex-col justify-center relative overflow-hidden section-padding">
+  return (
+    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden section-padding noise-overlay">
+      {/* Mesh gradient background */}
+      <div className="absolute inset-0 mesh-gradient" />
+      
+      {/* Hero glow effect */}
+      <div className="absolute inset-0 hero-glow" />
+
       {/* Animated Background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 -left-32 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[80px] animate-float" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
+        {/* Large animated orbs */}
+        <div className="absolute top-1/4 -right-32 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 -left-32 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] animate-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px] animate-morph" />
         
         {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-20 w-4 h-4 border-2 border-primary/30 rotate-45 animate-float" style={{ animationDelay: '0s' }} />
-        <div className="absolute top-40 right-40 w-6 h-6 border-2 border-primary/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-primary/20 rotate-45 animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-primary/30 rounded-full animate-pulse" />
-        <div className="absolute bottom-1/3 right-20 w-5 h-5 border border-primary/25 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-20 left-20 w-6 h-6 border-2 border-primary/40 rotate-45 animate-float" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-40 right-40 w-8 h-8 border-2 border-primary/30 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-40 left-1/4 w-4 h-4 bg-primary/30 rotate-45 animate-float-reverse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-primary/40 rounded-full animate-pulse" />
+        <div className="absolute bottom-1/3 right-20 w-6 h-6 border border-primary/25 rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-1/2 left-20 w-2 h-2 bg-primary/50 rounded-full animate-orbit" />
+        
+        {/* Decorative lines */}
+        <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-shimmer" />
+        <div className="absolute bottom-1/4 right-0 w-48 h-px bg-gradient-to-l from-transparent via-primary/20 to-transparent animate-shimmer" style={{ animationDelay: '1.5s' }} />
       </div>
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -24,9 +36,10 @@ const Hero = () => {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card-glow mb-8 animate-fade-up">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-body text-primary font-medium">Available for freelance</span>
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             </div>
 
             {/* Greeting */}
@@ -38,7 +51,7 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 animate-fade-up-delay-1 leading-[0.9] font-sans font-extrabold">
               <span className="block">Muhammed</span>
               <span className="block mt-2">
-                Jabir<span className="text-gradient"> A K</span>
+                Jabir<span className="text-gradient glow-text"> A K</span>
               </span>
             </h1>
 
@@ -47,16 +60,16 @@ const Hero = () => {
               <p className="font-body text-xl md:text-2xl lg:text-3xl text-foreground/80 mb-8">
                 <span className="relative">
                   Graphic Designer
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-primary/50" />
+                  <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/80 to-transparent rounded-full" />
                 </span>
-                <span className="text-primary mx-3">•</span>
+                <span className="text-primary mx-3">✦</span>
                 <span className="text-muted-foreground">Creative Visualizer</span>
               </p>
             </div>
 
             {/* Tagline */}
             <p className="font-body text-lg md:text-xl text-muted-foreground max-w-xl mb-10 animate-fade-up-delay-3 leading-relaxed">
-              Transforming ideas into <span className="text-foreground font-medium">stunning visuals</span> that captivate audiences and elevate brands.
+              Transforming ideas into <span className="text-primary font-medium">stunning visuals</span> that captivate audiences and elevate brands.
             </p>
 
             {/* CTA Buttons with enhanced styling */}
@@ -78,47 +91,59 @@ const Hero = () => {
             </div>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-8 mt-12 animate-fade-up-delay-4 justify-center lg:justify-start">
-              <div className="text-center lg:text-left">
-                <p className="text-3xl font-bold text-foreground font-sans">3+</p>
-                <p className="text-sm text-muted-foreground font-body">Years Experience</p>
-              </div>
-              <div className="w-px bg-border h-12 hidden sm:block" />
-              <div className="text-center lg:text-left">
-                <p className="text-3xl font-bold text-foreground font-sans">50+</p>
-                <p className="text-sm text-muted-foreground font-body">Projects Done</p>
-              </div>
-              <div className="w-px bg-border h-12 hidden sm:block" />
-              <div className="text-center lg:text-left">
-                <p className="text-3xl font-bold text-foreground font-sans">20+</p>
-                <p className="text-sm text-muted-foreground font-body">Happy Clients</p>
-              </div>
+            <div className="flex flex-wrap gap-8 mt-14 animate-fade-up-delay-4 justify-center lg:justify-start">
+              {[
+                { value: "3+", label: "Years Experience", icon: Star },
+                { value: "50+", label: "Projects Done", icon: Zap },
+                { value: "20+", label: "Happy Clients", icon: Sparkles },
+              ].map((stat, index) => (
+                <div key={index} className="text-center lg:text-left group cursor-default">
+                  <div className="flex items-center gap-2 mb-1">
+                    <stat.icon className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <p className="text-3xl font-bold text-foreground font-sans group-hover:text-primary transition-colors">{stat.value}</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-body">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Profile Image with creative frame */}
           <div className="flex-shrink-0 animate-scale-in relative">
-            {/* Decorative ring */}
-            <div className="absolute -inset-4 rounded-full border-2 border-dashed border-primary/20 animate-[spin_20s_linear_infinite]" />
+            {/* Outer glow ring */}
+            <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-primary/20 via-transparent to-primary/20 blur-2xl animate-pulse-glow" />
+            
+            {/* Decorative spinning ring */}
+            <div className="absolute -inset-6 rounded-full border-2 border-dashed border-primary/30 animate-[spin_25s_linear_infinite]" />
+            <div className="absolute -inset-10 rounded-full border border-primary/10 animate-[spin_35s_linear_infinite_reverse]" />
             
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-90" />
+            <div className="absolute inset-0 bg-primary/25 rounded-full blur-3xl scale-90" />
             
             {/* Main image container */}
             <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-transparent blur-xl" />
               <img 
                 src={profileImage} 
                 alt="Muhammed Jabir A K - Graphic Designer" 
-                className="w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] object-cover rounded-full relative z-10 shadow-2xl"
+                className="w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover rounded-full relative z-10 border-4 border-primary/20"
+                style={{ boxShadow: 'var(--shadow-glow-intense)' }}
               />
               
               {/* Floating elements around image */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg animate-float z-20">
-                <Sparkles className="w-6 h-6 text-primary-foreground" />
+              <div className="absolute -top-4 -right-4 w-14 h-14 glass-card-glow rounded-2xl flex items-center justify-center animate-float z-20">
+                <Sparkles className="w-7 h-7 text-primary" />
               </div>
               
-              <div className="absolute -bottom-2 -left-2 px-4 py-2 bg-card rounded-full shadow-lg border border-border animate-float z-20" style={{ animationDelay: '1s' }}>
-                <span className="text-sm font-body font-medium text-foreground">✨ Creative Mind</span>
+              <div className="absolute -bottom-2 -left-4 px-5 py-3 glass-card-glow rounded-full animate-float z-20" style={{ animationDelay: '1s' }}>
+                <span className="text-sm font-body font-medium text-foreground flex items-center gap-2">
+                  <Star className="w-4 h-4 text-primary" />
+                  Creative Mind
+                </span>
+              </div>
+
+              <div className="absolute top-1/2 -right-8 px-4 py-2 glass-card-glow rounded-full animate-float-reverse z-20" style={{ animationDelay: '2s' }}>
+                <span className="text-xs font-body font-medium text-primary">Design Expert</span>
               </div>
             </div>
           </div>
@@ -127,13 +152,15 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
-        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+        <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
           <span className="text-xs font-body tracking-widest uppercase">Scroll</span>
-          <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-current rounded-full animate-bounce" />
+          <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center pt-2 group-hover:border-primary transition-colors">
+            <div className="w-1.5 h-3 bg-current rounded-full animate-bounce group-hover:bg-primary transition-colors" />
           </div>
         </a>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
