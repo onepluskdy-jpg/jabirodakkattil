@@ -8,8 +8,18 @@ import marrakeshRestaurant from "@/assets/portfolio/marrakesh-restaurant.jpg";
 import fezcafeCricket from "@/assets/portfolio/fezcafe-cricket.jpg";
 import happyOnam from "@/assets/portfolio/happy-onam.png";
 import fezinnHospitality from "@/assets/portfolio/fezinn-hospitality.jpg";
+import politicalPoster1 from "@/assets/portfolio/political-poster-1.png";
+import politicalPoster2 from "@/assets/portfolio/political-poster-2.png";
+import politicalPoster3 from "@/assets/portfolio/political-poster-3.png";
+import sahityotsavPoster from "@/assets/portfolio/sahityotsav-poster.png";
+import politicalPoster4 from "@/assets/portfolio/political-poster-4.png";
+import politicalPoster5 from "@/assets/portfolio/political-poster-5.png";
+import politicalPoster6 from "@/assets/portfolio/political-poster-6.png";
+import politicalPoster7 from "@/assets/portfolio/political-poster-7.png";
+import politicalPoster8 from "@/assets/portfolio/political-poster-8.png";
+import politicalPoster9 from "@/assets/portfolio/political-poster-9.png";
 
-const categories = ["All", "Branding", "Social Media", "Print", "Packaging"];
+const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
 const projects = [
   {
@@ -41,6 +51,66 @@ const projects = [
     category: "Print",
     description: "Career and education promotional design",
     image: fezinnHospitality,
+  },
+  {
+    title: "UDF Election Campaign - Juharnass",
+    category: "Political",
+    description: "Political campaign poster design for local panchayat election",
+    image: politicalPoster1,
+  },
+  {
+    title: "UDF Election Campaign - Varghese Mathew",
+    category: "Political",
+    description: "Campaign design for Mavelikkara Thekkekara Grama Panchayat",
+    image: politicalPoster2,
+  },
+  {
+    title: "UDF Election Campaign - Moitheen Kutti",
+    category: "Political",
+    description: "Political poster for Nannamra Panchayat Ward 19",
+    image: politicalPoster3,
+  },
+  {
+    title: "Pravasi Sahityotsav 2025",
+    category: "Print",
+    description: "Cultural event poster for 15th edition literary festival",
+    image: sahityotsavPoster,
+  },
+  {
+    title: "UDF Election Campaign - Ramadevi",
+    category: "Political",
+    description: "Illustrated campaign design for Peringome-Vayakkara Panchayat",
+    image: politicalPoster4,
+  },
+  {
+    title: "LDF Election Campaign",
+    category: "Political",
+    description: "Campaign poster for Puthankadavu Grama Panchayat Ward 13",
+    image: politicalPoster5,
+  },
+  {
+    title: "UDF Election Campaign - M.P. Shamsudheen",
+    category: "Political",
+    description: "Political design for Cheekkadu Grama Panchayat",
+    image: politicalPoster6,
+  },
+  {
+    title: "Independent Candidate - Basheer",
+    category: "Political",
+    description: "Campaign poster for Cheekkadu Grama Panchayat Ward 18",
+    image: politicalPoster7,
+  },
+  {
+    title: "Independent Campaign - Kunjacka",
+    category: "Political",
+    description: "Election poster design for Ward 18 Thindappara",
+    image: politicalPoster8,
+  },
+  {
+    title: "Vote for Basheer C",
+    category: "Political",
+    description: "Gradient style campaign poster for independent candidate",
+    image: politicalPoster9,
   },
 ];
 
