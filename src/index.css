@@ -12,41 +12,43 @@
 
 @layer base {
   :root {
-    --background: 40 30% 98%;
-    --foreground: 220 20% 15%;
+    --background: 220 15% 8%;
+    --foreground: 40 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card: 220 15% 12%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 220 60% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 35 100% 55%;
+    --primary-foreground: 220 15% 8%;
 
-    --secondary: 40 20% 94%;
-    --secondary-foreground: 220 20% 25%;
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 40 20% 90%;
 
-    --muted: 40 15% 92%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 220 60% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 35 100% 55%;
+    --accent-foreground: 220 15% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 220 60% 45%;
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 35 100% 55%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(220 60% 45%) 0%, hsl(200 70% 50%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(40 30% 98%) 0%, hsl(40 20% 95%) 100%);
-    --shadow-glow: 0 0 60px hsl(220 60% 45% / 0.12);
-    --shadow-card: 0 4px 30px hsl(220 20% 15% / 0.08);
+    --gradient-primary: linear-gradient(135deg, hsl(35 100% 55%) 0%, hsl(45 100% 60%) 50%, hsl(25 100% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(35 100% 55% / 0.15) 0%, hsl(280 80% 60% / 0.1) 50%, hsl(200 80% 50% / 0.1) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 8%) 0%, hsl(220 15% 6%) 100%);
+    --shadow-glow: 0 0 80px hsl(35 100% 55% / 0.25);
+    --shadow-card: 0 8px 40px hsl(0 0% 0% / 0.3);
+    --shadow-glow-intense: 0 0 120px hsl(35 100% 55% / 0.4);
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'Outfit', sans-serif;
@@ -93,7 +95,13 @@
   }
 
   .glass-card {
-    @apply bg-card backdrop-blur-xl border border-border shadow-sm;
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card-glow {
+    @apply bg-card/60 backdrop-blur-xl border border-primary/20;
+    box-shadow: var(--shadow-glow), var(--shadow-card);
   }
 
   .hover-lift {
@@ -101,8 +109,8 @@
   }
 
   .hover-lift:hover {
-    @apply -translate-y-2;
-    box-shadow: var(--shadow-glow);
+    @apply -translate-y-3;
+    box-shadow: var(--shadow-glow-intense);
   }
 
   .section-padding {
@@ -115,23 +123,53 @@
   }
 
   .animate-fade-up-delay-1 {
-    animation: fadeUp 0.8s ease-out 0.1s forwards;
+    animation: fadeUp 0.8s ease-out 0.15s forwards;
     opacity: 0;
   }
 
   .animate-fade-up-delay-2 {
-    animation: fadeUp 0.8s ease-out 0.2s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-3 {
     animation: fadeUp 0.8s ease-out 0.3s forwards;
     opacity: 0;
   }
 
-  .animate-fade-up-delay-4 {
-    animation: fadeUp 0.8s ease-out 0.4s forwards;
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.8s ease-out 0.45s forwards;
     opacity: 0;
+  }
+
+  .animate-fade-up-delay-4 {
+    animation: fadeUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  .hero-glow {
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(35 100% 55% / 0.15), transparent);
+  }
+
+  .mesh-gradient {
+    background: 
+      radial-gradient(at 40% 20%, hsl(35 100% 55% / 0.12) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(280 80% 60% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(200 80% 50% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(35 100% 55% / 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(280 80% 60% / 0.1) 0px, transparent 50%);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px hsl(35 100% 55% / 0.5), 0 0 80px hsl(35 100% 55% / 0.3);
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
   }
 }
 
@@ -144,7 +182,7 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -154,26 +192,82 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(-2deg);
   }
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(220 60% 45% / 0.2);
+    box-shadow: 0 0 30px hsl(35 100% 55% / 0.3);
+    opacity: 0.8;
   }
   50% {
-    box-shadow: 0 0 40px hsl(220 60% 45% / 0.35);
+    box-shadow: 0 0 60px hsl(35 100% 55% / 0.5);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes morphBlob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(35 100% 55% / 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-orbit {
+  animation: orbit 15s linear infinite;
+}
+
+.animate-morph {
+  animation: morphBlob 8s ease-in-out infinite;
 }
