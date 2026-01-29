@@ -34,11 +34,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-4" : "bg-transparent py-6"}`}>
+  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-xl border-b border-border/50 py-4" : "bg-transparent py-6"}`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="font-bold font-sans text-3xl">
-          ​Jabir Portfolio    <span className="text-primary">.</span>
+        <Link to="/" className="font-bold font-display text-2xl text-foreground">
+          Jabir<span className="text-primary">.</span>
         </Link>
 
         {/* Desktop Nav */}
