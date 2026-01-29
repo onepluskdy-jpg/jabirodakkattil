@@ -49,7 +49,7 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Instrument Serif', 'serif'],
+        display: ['Poppins', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
