@@ -48,7 +48,7 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </a>)}
           <Button variant="hero" size="sm" asChild>
-            <Link to="/hire-me">Hire Me</Link>
+            <a href="#contact">Contact Me</a>
           </Button>
         </div>
 
@@ -65,9 +65,9 @@ const Navbar = () => {
                 {link.name}
               </a>)}
             <Button variant="hero" asChild>
-              <Link to="/hire-me" onClick={() => setIsMobileMenuOpen(false)}>
-                Hire Me
-              </Link>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                Contact Me
+              </a>
             </Button>
           </div>
         </div>}
