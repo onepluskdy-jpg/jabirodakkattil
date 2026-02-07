@@ -65,18 +65,21 @@ const Hero = () => {
 
           {/* Profile Image */}
           <div className="flex-shrink-0 relative animate-fade-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+            {/* Solid circular background */}
+            <div className="absolute inset-0 bg-primary rounded-full scale-100" />
+            
             {/* Decorative ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-spin-very-slow scale-110" />
-            <div className="absolute inset-0 rounded-full border border-dashed border-primary/10 animate-reverse-spin scale-125" />
+            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-spin-very-slow scale-110" />
+            <div className="absolute inset-0 rounded-full border border-dashed border-primary/20 animate-reverse-spin scale-125" />
             
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse-slow scale-90" />
+            <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse-slow scale-105" />
             
-            <div className="relative group">
+            <div className="relative group overflow-hidden rounded-full">
               <img 
                 src={profileImage} 
                 alt="Muhammed Jabir A K - Graphic Designer" 
-                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-105"
+                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-105 grayscale"
               />
             </div>
           </div>
