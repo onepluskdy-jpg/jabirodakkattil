@@ -26,6 +26,15 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
+            {/* Live Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-6 animate-fade-up opacity-0 [animation-delay:0.05s] [animation-fill-mode:forwards]">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </span>
+              <span className="text-sm font-medium text-foreground">Available for Work</span>
+            </div>
+
             {/* Greeting */}
             <p className="text-foreground font-display text-2xl md:text-3xl lg:text-4xl mb-4 animate-fade-up opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
               Hello! I'm
