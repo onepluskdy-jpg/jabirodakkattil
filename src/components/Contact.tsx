@@ -1,109 +1,128 @@
-import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink, Send, ArrowUpRight } from "lucide-react";
+
 const Contact = () => {
-  return <section id="contact" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+  return (
+    <section id="contact" className="section-padding relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/3 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary font-body text-sm uppercase tracking-widest mb-4 block">
-            Get In Touch
+        <div className="text-center mb-20">
+          <span className="text-primary font-body text-sm uppercase tracking-[0.3em] mb-4 block">
+            Contact
           </span>
-          <h2 className="text-4xl font-bold mb-6 font-sans md:text-6xl">
-            Let's Work <span className="text-gradient">Together</span>
+          <h2 className="text-5xl font-bold mb-6 font-display md:text-7xl tracking-tight">
+            Let's <span className="text-gradient">Talk</span>
           </h2>
-          <p className="text-muted-foreground font-body max-w-2xl mx-auto text-lg">
-            Have a project in mind? I'd love to hear about it. Let's create something amazing together.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 border">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6 font-sans">Contact Information</h3>
-              <div className="space-y-6">
-                <a href="tel:+917012418488" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Phone className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground block">Phone</span>
-                    <span className="font-body text-foreground font-medium">+91 7012418488</span>
-                  </div>
-                </a>
-
-                <a href="mailto:muhammedjabirmkm@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground block">Email</span>
-                    <span className="font-body text-foreground font-medium">muhammedjabirmkm@gmail.com</span>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4 text-muted-foreground">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground block">Location</span>
-                    <span className="font-body text-foreground font-medium">Malappuram, Kerala, India</span>
-                  </div>
-                </div>
-              </div>
+        {/* Main contact grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {/* Phone Card */}
+          <a
+            href="tel:+917012418488"
+            className="group glass-card rounded-2xl p-8 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_hsl(40_90%_55%/0.1)]"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+              <Phone className="w-6 h-6 text-primary" />
             </div>
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground block mb-2">
+              Phone
+            </span>
+            <span className="font-display text-lg text-foreground font-semibold block mb-4">
+              +91 7012418488
+            </span>
+            <span className="text-primary text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Call now <ArrowUpRight className="w-4 h-4" />
+            </span>
+          </a>
 
-            {/* Social Links */}
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-bold mb-6 font-sans">Follow My Work</h3>
-              <div className="flex gap-4">
-                <a href="https://behance.net/jabirmuhamme" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all font-body font-medium">
-                  Behance
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all font-body font-medium" href="https://instagram.com/jabir.mkm">
-                  Instagram
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
+          {/* Email Card */}
+          <a
+            href="mailto:muhammedjabirmkm@gmail.com"
+            className="group glass-card rounded-2xl p-8 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_hsl(40_90%_55%/0.1)]"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+              <Mail className="w-6 h-6 text-primary" />
             </div>
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground block mb-2">
+              Email
+            </span>
+            <span className="font-display text-lg text-foreground font-semibold block mb-4 break-all">
+              muhammedjabirmkm@gmail.com
+            </span>
+            <span className="text-primary text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Send email <ArrowUpRight className="w-4 h-4" />
+            </span>
+          </a>
+
+          {/* Location Card */}
+          <div className="glass-card rounded-2xl p-8">
+            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+              <MapPin className="w-6 h-6 text-primary" />
+            </div>
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground block mb-2">
+              Location
+            </span>
+            <span className="font-display text-lg text-foreground font-semibold block">
+              Malappuram, Kerala
+            </span>
+            <span className="text-muted-foreground text-sm mt-1 block">India</span>
           </div>
+        </div>
 
-          {/* CTA Card */}
-          <div className="glass-card p-8 md:p-12 relative overflow-hidden rounded-full flex-col flex items-center justify-center px-0 py-0">
-            {/* Background decoration */}
-            <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute -left-20 -bottom-20 w-48 h-48 bg-primary/5 rounded-full blur-3xl" />
-            
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-4 leading-tight font-sans md:text-5xl">
-                Ready to bring your
-                <br />
-                <span className="text-gradient">vision to life?</span>
+        {/* Bottom CTA + Socials */}
+        <div className="glass-card rounded-3xl p-10 md:p-16 relative overflow-hidden">
+          <div className="absolute -right-32 -top-32 w-80 h-80 bg-primary/8 rounded-full blur-3xl" />
+          <div className="absolute -left-32 -bottom-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="text-center md:text-left max-w-lg">
+              <h3 className="text-3xl md:text-4xl font-bold font-display mb-4 leading-tight">
+                Have a project in mind?
               </h3>
-              <p className="text-muted-foreground font-body mb-8 text-lg">
-                Whether you need a complete brand identity, social media graphics, or print materials, 
-                I'm here to help transform your ideas into impactful designs.
+              <p className="text-muted-foreground font-body text-lg">
+                Let's create something amazing together. I'm always open to new ideas and collaborations.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="hero" size="lg" asChild>
-                  <a href="mailto:muhammedjabirmkm@gmail.com">
-                    <Mail className="mr-2 h-5 w-5" />
-                    Send Email
-                  </a>
-                </Button>
-                <Button variant="heroOutline" size="lg" asChild>
-                  <a href="tel:+917012418488">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Now
-                  </a>
-                </Button>
+            </div>
+
+            <div className="flex flex-col gap-4 w-full md:w-auto">
+              <a
+                href="mailto:muhammedjabirmkm@gmail.com"
+                className="inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-2xl font-display font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_40px_hsl(40_90%_55%/0.3)]"
+              >
+                <Send className="w-5 h-5" />
+                Get In Touch
+              </a>
+
+              <div className="flex gap-3 justify-center">
+                <a
+                  href="https://behance.net/jabirmuhamme"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-body font-medium text-sm"
+                >
+                  Behance <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://instagram.com/jabir.mkm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-body font-medium text-sm"
+                >
+                  Instagram <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
