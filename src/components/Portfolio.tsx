@@ -18,6 +18,9 @@ import politicalPoster6 from "@/assets/portfolio/political-poster-6.png";
 import politicalPoster7 from "@/assets/portfolio/political-poster-7.png";
 import politicalPoster8 from "@/assets/portfolio/political-poster-8.png";
 import politicalPoster9 from "@/assets/portfolio/political-poster-9.png";
+import zechaiLocations from "@/assets/portfolio/zechai-locations.png";
+import zechaiDelivery from "@/assets/portfolio/zechai-delivery.png";
+import zechaiIftar from "@/assets/portfolio/zechai-iftar.png";
 
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
