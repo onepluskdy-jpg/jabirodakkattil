@@ -18,6 +18,9 @@ import politicalPoster6 from "@/assets/portfolio/political-poster-6.png";
 import politicalPoster7 from "@/assets/portfolio/political-poster-7.png";
 import politicalPoster8 from "@/assets/portfolio/political-poster-8.png";
 import politicalPoster9 from "@/assets/portfolio/political-poster-9.png";
+import zechaiLocations from "@/assets/portfolio/zechai-locations.png";
+import zechaiDelivery from "@/assets/portfolio/zechai-delivery.png";
+import zechaiIftar from "@/assets/portfolio/zechai-iftar.png";
 
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
@@ -111,6 +114,24 @@ const projects = [
     category: "Political",
     description: "Gradient style campaign poster for independent candidate",
     image: politicalPoster9,
+  },
+  {
+    title: "Zé Cha! New Locations",
+    category: "Social Media",
+    description: "Location expansion announcement design for tea brand",
+    image: zechaiLocations,
+  },
+  {
+    title: "Zé Cha! Delivery App",
+    category: "Social Media",
+    description: "Delivery app availability promotion with 3D illustration",
+    image: zechaiDelivery,
+  },
+  {
+    title: "Zé Cha! Iftar Combo",
+    category: "Print",
+    description: "Iftar special menu and combo offer design",
+    image: zechaiIftar,
   },
 ];
 
