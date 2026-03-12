@@ -115,6 +115,24 @@ const projects = [
     description: "Gradient style campaign poster for independent candidate",
     image: politicalPoster9,
   },
+  {
+    title: "Zé Cha! New Locations",
+    category: "Social Media",
+    description: "Location expansion announcement design for tea brand",
+    image: zechaiLocations,
+  },
+  {
+    title: "Zé Cha! Delivery App",
+    category: "Social Media",
+    description: "Delivery app availability promotion with 3D illustration",
+    image: zechaiDelivery,
+  },
+  {
+    title: "Zé Cha! Iftar Combo",
+    category: "Print",
+    description: "Iftar special menu and combo offer design",
+    image: zechaiIftar,
+  },
 ];
 
 const Portfolio = () => {
