@@ -33,6 +33,48 @@ const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Po
 
 const projects = [
   {
+    title: "Zé Cha! Lakshadweep Opening",
+    category: "Social Media",
+    description: "New location opening announcement for Lakshadweep",
+    image: zechaiLakshadweep,
+  },
+  {
+    title: "Zé Cha! Palakkad Delivery",
+    category: "Social Media",
+    description: "Zomato & Swiggy delivery app promotion for Palakkad branch",
+    image: zechaiPalakkadDelivery,
+  },
+  {
+    title: "Zé Cha! Eid Mubarak - Palakkad",
+    category: "Social Media",
+    description: "Eid festival greeting design for Palakkad branch",
+    image: zechaiEidPalakkad,
+  },
+  {
+    title: "Zé Cha! Eid Mubarak - Thaliparamba",
+    category: "Social Media",
+    description: "Eid greeting design for Thaliparamba branch",
+    image: zechaiEidThaliparamba,
+  },
+  {
+    title: "Zé Cha! Time Change Alert",
+    category: "Social Media",
+    description: "Operating hours update announcement for Palakkad",
+    image: zechaiTimeChange,
+  },
+  {
+    title: "Zé Cha! Eid Mubarak - Cup",
+    category: "Branding",
+    description: "Eid themed product photography and branding design",
+    image: zechaiEidCup,
+  },
+  {
+    title: "Zé Cha! Eid Mubarak - Manassery",
+    category: "Social Media",
+    description: "Eid greeting design for Manassery-Mukkam branch",
+    image: zechaiEidManassery,
+  },
+  {
     title: "Zé Cha! New Locations",
     category: "Social Media",
     description: "Location expansion announcement design for tea brand",
