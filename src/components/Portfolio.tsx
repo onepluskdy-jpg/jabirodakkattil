@@ -21,6 +21,13 @@ import politicalPoster9 from "@/assets/portfolio/political-poster-9.png";
 import zechaiLocations from "@/assets/portfolio/zechai-locations.png";
 import zechaiDelivery from "@/assets/portfolio/zechai-delivery.png";
 import zechaiIftar from "@/assets/portfolio/zechai-iftar.png";
+import zechaiLakshadweep from "@/assets/portfolio/zechai-lakshadweep.png";
+import zechaiPalakkadDelivery from "@/assets/portfolio/zechai-palakkad-delivery.jpeg";
+import zechaiEidPalakkad from "@/assets/portfolio/zechai-eid-palakkad.jpeg";
+import zechaiEidThaliparamba from "@/assets/portfolio/zechai-eid-thaliparamba.jpeg";
+import zechaiTimeChange from "@/assets/portfolio/zechai-time-change.jpeg";
+import zechaiEidCup from "@/assets/portfolio/zechai-eid-cup.jpeg";
+import zechaiEidManassery from "@/assets/portfolio/zechai-eid-manassery.jpeg";
 
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
