@@ -1,8 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import profileImage from "@/assets/profile.png";
+import { useRef } from "react";
 
 const Hero = () => {
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = imageRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(800px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale3d(1.05, 1.05, 1.05)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = imageRef.current;
+    if (!el) return;
+    el.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-background">
       {/* Animated Background Elements */}
@@ -73,7 +91,13 @@ const Hero = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex-shrink-0 relative animate-fade-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+          <div 
+            ref={imageRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="flex-shrink-0 relative animate-fade-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards] transition-transform duration-300 ease-out"
+            style={{ transformStyle: 'preserve-3d' }}
+          >
             {/* Solid circular background */}
             <div className="absolute inset-0 bg-primary rounded-full scale-100" />
             
@@ -84,11 +108,11 @@ const Hero = () => {
             {/* Glow effect */}
             <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse-slow scale-105" />
             
-            <div className="relative group overflow-hidden rounded-full animate-[float-slow_6s_ease-in-out_infinite]">
+            <div className="relative group overflow-hidden rounded-full">
               <img 
                 src={profileImage} 
                 alt="Muhammed Jabir A K - Graphic Designer" 
-                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2"
+                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-110"
               />
             </div>
           </div>
