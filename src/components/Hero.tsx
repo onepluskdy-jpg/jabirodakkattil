@@ -1,8 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import profileImage from "@/assets/profile.png";
+import { useRef } from "react";
 
 const Hero = () => {
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = imageRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(800px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale3d(1.05, 1.05, 1.05)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = imageRef.current;
+    if (!el) return;
+    el.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-background">
       {/* Animated Background Elements */}
