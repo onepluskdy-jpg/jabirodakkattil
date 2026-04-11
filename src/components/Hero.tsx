@@ -88,7 +88,7 @@ const Hero = () => {
               <img 
                 src={profileImage} 
                 alt="Muhammed Jabir A K - Graphic Designer" 
-                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-105 grayscale"
+                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-105"
               />
             </div>
           </div>
