@@ -99,14 +99,14 @@ const Hero = () => {
             style={{ transformStyle: 'preserve-3d' }}
           >
             {/* Solid circular background */}
-            <div className="absolute inset-0 bg-primary rounded-full scale-100" />
+            <div className="absolute inset-0 bg-foreground rounded-full scale-100" />
             
             {/* Decorative ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-spin-very-slow scale-110" />
-            <div className="absolute inset-0 rounded-full border border-dashed border-primary/20 animate-reverse-spin scale-125" />
+            <div className="absolute inset-0 rounded-full border-2 border-foreground/30 animate-spin-very-slow scale-110" />
+            <div className="absolute inset-0 rounded-full border border-dashed border-foreground/20 animate-reverse-spin scale-125" />
             
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse-slow scale-105" />
+            <div className="absolute inset-0 bg-foreground/30 rounded-full blur-2xl animate-pulse-slow scale-105" />
             
             <div className="relative group overflow-hidden rounded-full">
               <img 
