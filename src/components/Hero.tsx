@@ -84,11 +84,11 @@ const Hero = () => {
             {/* Glow effect */}
             <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse-slow scale-105" />
             
-            <div className="relative group overflow-hidden rounded-full">
+            <div className="relative group overflow-hidden rounded-full animate-[float-slow_6s_ease-in-out_infinite]">
               <img 
                 src={profileImage} 
                 alt="Muhammed Jabir A K - Graphic Designer" 
-                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-105"
+                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2"
               />
             </div>
           </div>
