@@ -1,174 +1,76 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import profileImage from "@/assets/profile.png";
-import { useRef } from "react";
 
 const Hero = () => {
-  const imageRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = imageRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.transform = `perspective(800px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale3d(1.05, 1.05, 1.05)`;
-  };
-
-  const handleMouseLeave = () => {
-    const el = imageRef.current;
-    if (!el) return;
-    el.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
-  };
-
   return (
-    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-background">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float-slow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float-medium" />
-        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-accent/15 rounded-full blur-2xl animate-float-fast" />
-        <div className="absolute top-10 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float-medium" />
-
-        {/* Geometric Shapes */}
-        <div className="absolute top-32 right-1/4 w-4 h-4 bg-primary/40 rotate-45 animate-spin-slow" />
-        <div className="absolute bottom-40 left-1/4 w-6 h-6 border-2 border-primary/30 rotate-12 animate-bounce-slow" />
-        <div className="absolute top-1/3 right-20 w-3 h-3 bg-primary/50 rounded-full animate-pulse-slow" />
-        <div className="absolute bottom-1/3 left-20 w-2 h-2 bg-primary/60 rounded-full animate-ping-slow" />
-        <div className="absolute top-1/4 left-1/2 w-5 h-5 border border-primary/30 rounded-full animate-float-fast" />
-        <div className="absolute bottom-1/4 right-1/3 w-3 h-3 border border-primary/40 rotate-45 animate-spin-slow" />
-
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_40%,transparent_100%)]" />
-
-        {/* Radial spotlight */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,hsl(var(--primary)/0.08)_0%,transparent_70%)] animate-pulse-slow" />
-
-        {/* Twinkling stars */}
-        <div className="absolute top-[15%] left-[20%] w-1 h-1 bg-primary rounded-full animate-twinkle [animation-delay:0s] shadow-[0_0_8px_hsl(var(--primary))]" />
-        <div className="absolute top-[25%] left-[70%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:0.5s] shadow-[0_0_6px_hsl(var(--foreground))]" />
-        <div className="absolute top-[60%] left-[15%] w-1.5 h-1.5 bg-primary rounded-full animate-twinkle [animation-delay:1s] shadow-[0_0_10px_hsl(var(--primary))]" />
-        <div className="absolute top-[75%] left-[80%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:1.5s] shadow-[0_0_6px_hsl(var(--foreground))]" />
-        <div className="absolute top-[40%] left-[90%] w-1 h-1 bg-primary rounded-full animate-twinkle [animation-delay:2s] shadow-[0_0_8px_hsl(var(--primary))]" />
-        <div className="absolute top-[85%] left-[40%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:2.5s] shadow-[0_0_6px_hsl(var(--foreground))]" />
-        <div className="absolute top-[10%] left-[50%] w-1.5 h-1.5 bg-primary rounded-full animate-twinkle [animation-delay:3s] shadow-[0_0_10px_hsl(var(--primary))]" />
-        <div className="absolute top-[55%] left-[55%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:1.2s] shadow-[0_0_6px_hsl(var(--foreground))]" />
-
-        {/* Aurora gradient blobs */}
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,hsl(var(--primary)/0.15)_0%,transparent_60%)] blur-2xl animate-aurora" />
+    <section className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
+      {/* Full-bleed background photo */}
+      <div className="absolute inset-0">
+        <img
+          src={profileImage}
+          alt="Muhammed Jabir A K — Graphic Designer"
+          className="w-full h-full object-cover object-center grayscale"
+        />
+        {/* Editorial gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
-      <div className="max-w-6xl mx-auto w-full px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left">
-            {/* Live Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-primary/30 mb-6 animate-fade-up opacity-0 [animation-delay:0.05s] [animation-fill-mode:forwards] backdrop-blur-sm shadow-[0_0_20px_hsl(var(--primary)/0.15)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-shadow duration-500">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-              </span>
-              <span className="text-sm font-medium text-foreground">Available for Work</span>
-            </div>
-
-            {/* Greeting */}
-            <p className="text-muted-foreground font-display text-2xl md:text-3xl lg:text-4xl mb-4 animate-fade-up opacity-0 [animation-delay:0.1s] [animation-fill-mode:forwards]">
-              Hello! I'm <span className="inline-block animate-wave origin-[70%_70%]">👋</span>
-            </p>
-
-            {/* Name - Bold with animated gradient */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 leading-[1.1] font-display font-bold text-foreground">
-              <span className="inline-block animate-fade-up opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards]">
-                Muhammed
-              </span>
-              <br />
-              <span className="inline-block animate-fade-up opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards] text-primary">
-                Jabir A K
-              </span>
-            </h1>
-
-            {/* Tagline */}
-            <p className="font-body text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg mb-8 leading-relaxed mx-auto lg:mx-0 animate-fade-up opacity-0 [animation-delay:0.4s] [animation-fill-mode:forwards]">
-              Kerala-based Designer, blending creativity and strategy for global clients
-            </p>
-
-            {/* Stat chips */}
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 animate-fade-up opacity-0 [animation-delay:0.45s] [animation-fill-mode:forwards]">
-              <div className="px-4 py-2 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm hover:border-primary/60 hover:scale-105 transition-all duration-300">
-                <span className="text-primary font-display font-bold text-lg">5+</span>
-                <span className="text-muted-foreground text-sm ml-1.5">Years</span>
-              </div>
-              <div className="px-4 py-2 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm hover:border-primary/60 hover:scale-105 transition-all duration-300">
-                <span className="text-primary font-display font-bold text-lg">100+</span>
-                <span className="text-muted-foreground text-sm ml-1.5">Projects</span>
-              </div>
-              <div className="px-4 py-2 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm hover:border-primary/60 hover:scale-105 transition-all duration-300">
-                <span className="text-primary font-display font-bold text-lg">50+</span>
-                <span className="text-muted-foreground text-sm ml-1.5">Clients</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-up opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
-              <Button variant="hero" size="lg" className="group rounded-full hover:scale-105 transition-all duration-300 shadow-[0_0_25px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.6)]" asChild>
-                <a href="#portfolio">
-                  <ArrowRight className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  Portfolio
-                </a>
-              </Button>
-              <Button variant="heroOutline" size="lg" className="group rounded-full hover:scale-105 transition-transform duration-300 backdrop-blur-sm" asChild>
-                <a href="#about">
-                  About
-                </a>
-              </Button>
-            </div>
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-end max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-32">
+        {/* Top meta */}
+        <div className="absolute top-32 left-6 md:left-12 right-6 md:right-12 flex flex-wrap items-center justify-between gap-4 text-sm font-body text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+            </span>
+            <span className="uppercase tracking-[0.2em]">Open to Work</span>
           </div>
-
-          {/* Profile Image */}
-          <div 
-            ref={imageRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className="flex-shrink-0 relative animate-fade-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards] transition-transform duration-300 ease-out"
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            {/* Solid circular background */}
-            <div className="absolute inset-0 bg-foreground rounded-full scale-100" />
-
-            {/* Decorative rings */}
-            <div className="absolute inset-0 rounded-full border-2 border-primary/40 animate-spin-very-slow scale-110" />
-            <div className="absolute inset-0 rounded-full border border-dashed border-foreground/30 animate-reverse-spin scale-125" />
-            <div className="absolute inset-0 rounded-full border border-primary/20 animate-spin-very-slow scale-[1.4]" />
-
-            {/* Multi-layer glow */}
-            <div className="absolute inset-0 bg-primary/40 rounded-full blur-3xl animate-pulse-slow scale-110" />
-            <div className="absolute inset-0 bg-foreground/20 rounded-full blur-2xl animate-pulse-slow scale-105" />
-
-            {/* Floating accent dots around image */}
-            <div className="absolute -top-2 left-1/2 w-3 h-3 bg-primary rounded-full animate-pulse-slow shadow-[0_0_15px_hsl(var(--primary))]" />
-            <div className="absolute top-1/2 -right-2 w-2 h-2 bg-primary rounded-full animate-ping-slow" />
-            <div className="absolute -bottom-2 left-1/4 w-2 h-2 bg-primary/70 rounded-full animate-pulse-slow" />
-            
-            <div className="relative group overflow-hidden rounded-full">
-              <img 
-                src={profileImage} 
-                alt="Muhammed Jabir A K - Graphic Designer" 
-                className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-110"
-              />
-              {/* Shine sweep on hover */}
-              <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
-                <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              </div>
-            </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4" />
+            <span>Kerala, India</span>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow opacity-0 animate-fade-up [animation-delay:1s] [animation-fill-mode:forwards]">
-        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-primary/50 rounded-full mt-2 animate-scroll-indicator" />
+        {/* Main editorial block */}
+        <div className="max-w-4xl">
+          <p className="font-body text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6">
+            Muhammed Jabir A K · @jabir.mkm
+          </p>
+
+          <h1 className="font-display font-bold leading-[0.95] tracking-tight text-foreground text-[18vw] md:text-[14vw] lg:text-[10rem] xl:text-[12rem]">
+            Graphic
+            <br />
+            Designer
+          </h1>
+
+          <p className="mt-8 max-w-2xl font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
+            I'm Jabir, a Kerala-based graphic designer helping brands and startups
+            build clear, considered visual identities that turn attention into trust.
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-12 font-body font-medium"
+            >
+              <a href="#portfolio">
+                View Work
+                <ArrowUpRight className="ml-1 h-5 w-5" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="rounded-full border border-border hover:bg-foreground/5 px-8 h-12 font-body font-medium text-foreground"
+            >
+              <a href="#contact">Start a Project</a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -200,31 +200,32 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="section-padding bg-card/30">
-      <div className="max-w-6xl mx-auto">
+    <section id="portfolio" className="py-24 md:py-32 px-6 md:px-12 border-t border-border">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-primary font-body text-sm uppercase tracking-widest mb-4 block">
-            My Work
-          </span>
-          <h2 className="text-4xl font-bold mb-6 font-sans md:text-6xl">
-            Featured <span className="text-gradient font-sans">Projects</span>
-          </h2>
-          <p className="text-muted-foreground font-body max-w-2xl mx-auto">
-            A selection of my recent work across branding, print, and digital design.
-          </p>
+        <div className="grid lg:grid-cols-12 gap-12 mb-16">
+          <div className="lg:col-span-3">
+            <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              Selected Work
+            </span>
+          </div>
+          <div className="lg:col-span-9">
+            <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground">
+              Projects.
+            </h2>
+          </div>
         </div>
 
         {/* Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap gap-2 mb-12">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-300 border ${
                 activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+                  ? "bg-foreground text-background border-foreground"
+                  : "bg-transparent text-muted-foreground border-border hover:text-foreground hover:border-foreground/40"
               }`}
             >
               {category}
@@ -233,55 +234,47 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
           {filteredProjects.map((project, index) => (
             <div
               key={index}
               onClick={() => handleProjectClick(project)}
-              className="group rounded-2xl overflow-hidden hover-lift cursor-pointer"
+              className="group cursor-pointer"
             >
-              {/* Project Image */}
-              <div className="aspect-[4/3] relative overflow-hidden bg-secondary">
+              <div className="aspect-[4/5] relative overflow-hidden bg-secondary mb-4">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-primary/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center p-6">
-                    <ExternalLink className="w-8 h-8 text-primary-foreground mx-auto mb-3" />
-                    <span className="font-body text-primary-foreground font-medium">
-                      View Project
-                    </span>
-                  </div>
-                </div>
               </div>
-              {/* Project Info */}
-              <div className="p-5 bg-card">
-                <span className="text-primary font-body text-xs uppercase tracking-wider">
-                  {project.category}
-                </span>
-                <h3 className="text-lg font-semibold mt-1 mb-2 text-foreground group-hover:text-primary transition-colors font-sans">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground font-body text-sm">
-                  {project.description}
-                </p>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="font-display font-medium text-lg text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1 block">
+                    {project.category}
+                  </span>
+                </div>
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors mt-1 shrink-0" />
               </div>
             </div>
           ))}
         </div>
 
         {/* View More */}
-        <div className="text-center mt-12">
+        <div className="mt-20 pt-12 border-t border-border flex items-center justify-between">
+          <span className="font-body text-sm text-muted-foreground">
+            Want to see more?
+          </span>
           <a
             href="https://behance.net/jabirmuhamme"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary font-body font-medium hover:underline underline-offset-4"
+            className="inline-flex items-center gap-2 font-display font-medium text-foreground hover:text-primary transition-colors"
           >
-            View more on Behance
+            View on Behance
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
