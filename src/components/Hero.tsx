@@ -78,12 +78,12 @@ const Hero = () => {
             </p>
 
             {/* Name - Bold with animated gradient */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 leading-[1.1] font-display font-bold">
-              <span className="inline-block animate-fade-up opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards] bg-[linear-gradient(110deg,hsl(var(--primary))_0%,hsl(var(--foreground))_50%,hsl(var(--primary))_100%)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-shift">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 leading-[1.1] font-display font-bold text-foreground">
+              <span className="inline-block animate-fade-up opacity-0 [animation-delay:0.2s] [animation-fill-mode:forwards]">
                 Muhammed
               </span>
               <br />
-              <span className="inline-block animate-fade-up opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards] bg-[linear-gradient(110deg,hsl(var(--primary))_0%,hsl(var(--foreground))_50%,hsl(var(--primary))_100%)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-shift">
+              <span className="inline-block animate-fade-up opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards] text-primary">
                 Jabir A K
               </span>
             </h1>
