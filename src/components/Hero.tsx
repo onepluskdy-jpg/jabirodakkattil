@@ -44,6 +44,19 @@ const Hero = () => {
 
         {/* Radial spotlight */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,hsl(var(--primary)/0.08)_0%,transparent_70%)] animate-pulse-slow" />
+
+        {/* Twinkling stars */}
+        <div className="absolute top-[15%] left-[20%] w-1 h-1 bg-primary rounded-full animate-twinkle [animation-delay:0s] shadow-[0_0_8px_hsl(var(--primary))]" />
+        <div className="absolute top-[25%] left-[70%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:0.5s] shadow-[0_0_6px_hsl(var(--foreground))]" />
+        <div className="absolute top-[60%] left-[15%] w-1.5 h-1.5 bg-primary rounded-full animate-twinkle [animation-delay:1s] shadow-[0_0_10px_hsl(var(--primary))]" />
+        <div className="absolute top-[75%] left-[80%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:1.5s] shadow-[0_0_6px_hsl(var(--foreground))]" />
+        <div className="absolute top-[40%] left-[90%] w-1 h-1 bg-primary rounded-full animate-twinkle [animation-delay:2s] shadow-[0_0_8px_hsl(var(--primary))]" />
+        <div className="absolute top-[85%] left-[40%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:2.5s] shadow-[0_0_6px_hsl(var(--foreground))]" />
+        <div className="absolute top-[10%] left-[50%] w-1.5 h-1.5 bg-primary rounded-full animate-twinkle [animation-delay:3s] shadow-[0_0_10px_hsl(var(--primary))]" />
+        <div className="absolute top-[55%] left-[55%] w-1 h-1 bg-foreground rounded-full animate-twinkle [animation-delay:1.2s] shadow-[0_0_6px_hsl(var(--foreground))]" />
+
+        {/* Aurora gradient blobs */}
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,hsl(var(--primary)/0.15)_0%,transparent_60%)] blur-2xl animate-aurora" />
       </div>
 
       <div className="max-w-6xl mx-auto w-full px-6 md:px-12 relative z-10">
@@ -76,9 +89,25 @@ const Hero = () => {
             </h1>
 
             {/* Tagline */}
-            <p className="font-body text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg mb-10 leading-relaxed mx-auto lg:mx-0 animate-fade-up opacity-0 [animation-delay:0.4s] [animation-fill-mode:forwards]">
+            <p className="font-body text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg mb-8 leading-relaxed mx-auto lg:mx-0 animate-fade-up opacity-0 [animation-delay:0.4s] [animation-fill-mode:forwards]">
               Kerala-based Designer, blending creativity and strategy for global clients
             </p>
+
+            {/* Stat chips */}
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 animate-fade-up opacity-0 [animation-delay:0.45s] [animation-fill-mode:forwards]">
+              <div className="px-4 py-2 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm hover:border-primary/60 hover:scale-105 transition-all duration-300">
+                <span className="text-primary font-display font-bold text-lg">5+</span>
+                <span className="text-muted-foreground text-sm ml-1.5">Years</span>
+              </div>
+              <div className="px-4 py-2 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm hover:border-primary/60 hover:scale-105 transition-all duration-300">
+                <span className="text-primary font-display font-bold text-lg">100+</span>
+                <span className="text-muted-foreground text-sm ml-1.5">Projects</span>
+              </div>
+              <div className="px-4 py-2 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm hover:border-primary/60 hover:scale-105 transition-all duration-300">
+                <span className="text-primary font-display font-bold text-lg">50+</span>
+                <span className="text-muted-foreground text-sm ml-1.5">Clients</span>
+              </div>
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-up opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
@@ -127,6 +156,10 @@ const Hero = () => {
                 alt="Muhammed Jabir A K - Graphic Designer" 
                 className="w-72 h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] object-cover transition-all duration-500 group-hover:scale-110"
               />
+              {/* Shine sweep on hover */}
+              <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+                <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              </div>
             </div>
           </div>
         </div>
