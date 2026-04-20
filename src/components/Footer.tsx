@@ -1,20 +1,34 @@
 const Footer = () => {
-  return <footer className="py-8 px-6 border-t border-border/50">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="font-body font-bold text-sm">Jabir Portfolio <span className="text-primary">.</span>
+  return (
+    <footer className="py-12 px-6 md:px-12 border-t border-border">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="font-display font-bold text-xl text-foreground">
+          Jabir<span className="text-primary">.</span>
         </div>
-        <p className="text-muted-foreground font-body text-sm text-center">
+        <p className="font-body text-sm text-muted-foreground">
           © {new Date().getFullYear()} Muhammed Jabir A K. All rights reserved.
         </p>
-        <div className="flex gap-4 text-muted-foreground font-body text-sm">
-          <a href="https://behance.net/jabirmuhamme" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+        <div className="flex gap-6 font-body text-sm">
+          <a
+            href="https://behance.net/jabirmuhamme"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             Behance
           </a>
-          <a href="https://instagram.com/jabirmuhamme" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+          <a
+            href="https://instagram.com/jabir.mkm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             Instagram
           </a>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

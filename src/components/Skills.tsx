@@ -1,128 +1,78 @@
-import { Palette, PenTool, Share2, Package, FileText, Printer, Settings, Layers } from "lucide-react";
-const skills = [{
-  icon: Palette,
-  name: "Branding & Visual Identity",
-  description: "Creating cohesive brand experiences"
-}, {
-  icon: PenTool,
-  name: "Logo Design",
-  description: "Memorable marks that stand out"
-}, {
-  icon: Share2,
-  name: "Social Media Creatives",
-  description: "Engaging content for digital platforms"
-}, {
-  icon: Package,
-  name: "Package Design",
-  description: "Eye-catching product packaging"
-}, {
-  icon: FileText,
-  name: "Flyer & Brochure Design",
-  description: "Print materials that convert"
-}, {
-  icon: Printer,
-  name: "Print File & Die Setup",
-  description: "Production-ready file preparation"
-}, {
-  icon: Layers,
-  name: "Advertisement Design",
-  description: "Impactful ads for all mediums"
-}, {
-  icon: Settings,
-  name: "Machine Operations",
-  description: "Laser cutting & maintenance"
-}];
-const tools = [{
-  name: "Photoshop",
-  level: 95
-}, {
-  name: "Illustrator",
-  level: 95
-}, {
-  name: "CorelDRAW",
-  level: 95
-}, {
-  name: "InDesign",
-  level: 85
-}, {
-  name: "Figma",
-  level: 70
-}, {
-  name: "After Effects",
-  level: 70
-}, {
-  name: "Premiere Pro",
-  level: 65
-}];
+const skills = [
+  "Branding & Visual Identity",
+  "Logo Design",
+  "Social Media Creatives",
+  "Package Design",
+  "Flyer & Brochure Design",
+  "Print File & Die Setup",
+  "Advertisement Design",
+  "Machine Operations",
+];
+
+const tools = [
+  "Photoshop",
+  "Illustrator",
+  "CorelDRAW",
+  "InDesign",
+  "Figma",
+  "After Effects",
+  "Premiere Pro",
+];
+
 const Skills = () => {
   return (
-    <section id="skills" className="section-padding relative overflow-hidden noise-overlay">
-      {/* Background elements */}
-      <div className="absolute inset-0 mesh-gradient opacity-30" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-glow text-primary font-body text-sm uppercase tracking-widest mb-6">
-            What I Do
-          </span>
-          <h2 className="text-4xl font-sans font-extrabold md:text-6xl">
-            Skills & <span className="text-gradient glow-text">Expertise</span>
-          </h2>
-        </div>
+    <section id="skills" className="py-24 md:py-32 px-6 md:px-12 border-t border-border">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-3">
+            <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              Capabilities
+            </span>
+          </div>
+          <div className="lg:col-span-9">
+            <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground mb-16">
+              What I do.
+            </h2>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {skills.map((skill, index) => (
-            <div 
-              key={index} 
-              className="glass-card rounded-2xl p-6 hover-lift group cursor-default"
-            >
-              <div className="w-14 h-14 rounded-xl glass-card-glow flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <skill.icon className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-foreground font-sans group-hover:text-primary transition-colors">
-                {skill.name}
-              </h3>
-              <p className="text-muted-foreground font-body text-sm">
-                {skill.description}
-              </p>
-            </div>
-          ))}
-        </div>
+            {/* Skills list */}
+            <ul className="divide-y divide-border border-y border-border">
+              {skills.map((skill, i) => (
+                <li
+                  key={skill}
+                  className="flex items-center justify-between py-6 group"
+                >
+                  <span className="font-display font-medium text-2xl md:text-3xl text-foreground group-hover:text-primary transition-colors">
+                    {skill}
+                  </span>
+                  <span className="font-body text-sm text-muted-foreground tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-        {/* Tools Section */}
-        <div className="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px]" />
-          
-          <h3 className="text-2xl font-bold mb-10 text-center font-sans md:text-4xl relative z-10">
-            Tools I <span className="text-gradient">Master</span>
-          </h3>
-          <div className="space-y-8 max-w-2xl mx-auto relative z-10">
-            {tools.map((tool, index) => (
-              <div key={index} className="group">
-                <div className="flex justify-between mb-3">
-                  <span className="font-body font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</span>
-                  <span className="font-body text-primary font-medium">{tool.level}%</span>
-                </div>
-                <div className="h-3 bg-secondary/50 rounded-full overflow-hidden backdrop-blur-sm">
-                  <div 
-                    className="h-full rounded-full transition-all duration-1000 ease-out relative overflow-hidden" 
-                    style={{
-                      width: `${tool.level}%`,
-                      background: "var(--gradient-primary)"
-                    }}
+            {/* Tools */}
+            <div className="mt-20">
+              <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground block mb-6">
+                Tools
+              </span>
+              <div className="flex flex-wrap gap-x-6 gap-y-3">
+                {tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="font-display text-xl md:text-2xl text-foreground"
                   >
-                    <div className="absolute inset-0 animate-shimmer" />
-                  </div>
-                </div>
+                    {tool}
+                    <span className="text-muted-foreground ml-6">·</span>
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 };
+
 export default Skills;
