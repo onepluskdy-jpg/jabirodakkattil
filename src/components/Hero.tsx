@@ -36,8 +36,7 @@ const Hero = () => {
         <img
           src={profileImage}
           alt="Jabir portrait"
-          className="w-full h-auto object-contain object-bottom opacity-60 md:opacity-90"
-          style={{ filter: "grayscale(100%) contrast(1.05) brightness(0.85)" }}
+          className="w-full h-auto object-contain object-bottom opacity-90 md:opacity-100"
         />
       </div>
 
