@@ -1,77 +1,91 @@
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight, MapPin } from "lucide-react";
-import profileImage from "@/assets/profile.png";
+import { MapPin } from "lucide-react";
+
+const marqueeItems = [
+  "Branding",
+  "Visual Identity",
+  "Social Media",
+  "Print Design",
+  "Packaging",
+  "Political Campaigns",
+  "Logo Design",
+  "Open to Work",
+];
 
 const Hero = () => {
+  const loop = [...marqueeItems, ...marqueeItems];
+
   return (
-    <section className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
-      {/* Full-bleed background photo */}
-      <div className="absolute inset-0">
-        <img
-          src={profileImage}
-          alt="Muhammed Jabir A K — Graphic Designer"
-          className="w-full h-full object-cover object-center grayscale"
-        />
-        {/* Editorial gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+    <section className="relative min-h-screen w-full bg-background text-foreground overflow-hidden flex flex-col">
+      {/* Subtle radial glow */}
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-40"
+        style={{
+          background:
+            "radial-gradient(ellipse at top, hsl(var(--primary) / 0.15), transparent 60%)",
+        }}
+      />
+
+      {/* Top intro line */}
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 pt-32 md:pt-40">
+        <div className="flex items-center gap-3 font-body text-sm text-muted-foreground">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+          </span>
+          <span className="uppercase tracking-[0.25em]">
+            Hello <span className="not-italic">👋</span>, great to have you here
+          </span>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-end max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-32">
-        {/* Top meta */}
-        <div className="absolute top-32 left-6 md:left-12 right-6 md:right-12 flex flex-wrap items-center justify-between gap-4 text-sm font-body text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-            </span>
-            <span className="uppercase tracking-[0.2em]">Open to Work</span>
-          </div>
+      {/* Headline */}
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 flex-1 flex flex-col justify-center py-16">
+        <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.95] text-[12vw] md:text-[8.5vw] lg:text-[7.5rem] xl:text-[9rem]">
+          <span className="text-primary">I'm a Graphic Designer</span>
+          <br />
+          <span className="text-foreground">Crafting Bold Brand Identities</span>
+        </h1>
+
+        <p className="mt-10 max-w-2xl font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
+          I'm Jabir — based in Kerala. Started in production and print, found my
+          way to design. Now I build clear, considered identities that turn
+          attention into trust.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-6 font-body text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" />
             <span>Kerala, India</span>
           </div>
+          <span className="hidden md:inline">·</span>
+          <span>@jabir.mkm</span>
+          <span className="hidden md:inline">·</span>
+          <span>Muhammed Jabir A K</span>
         </div>
+      </div>
 
-        {/* Main editorial block */}
-        <div className="max-w-4xl">
-          <p className="font-body text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6">
-            Muhammed Jabir A K · @jabir.mkm
-          </p>
-
-          <h1 className="font-display font-bold leading-[0.95] tracking-tight text-foreground text-[18vw] md:text-[14vw] lg:text-[10rem] xl:text-[12rem]">
-            Graphic
-            <br />
-            Designer
-          </h1>
-
-          <p className="mt-8 max-w-2xl font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
-            I'm Jabir, a Kerala-based graphic designer helping brands and startups
-            build clear, considered visual identities that turn attention into trust.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-12 font-body font-medium"
-            >
-              <a href="#portfolio">
-                View Work
-                <ArrowUpRight className="ml-1 h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              size="lg"
-              className="rounded-full border border-border hover:bg-foreground/5 px-8 h-12 font-body font-medium text-foreground"
-            >
-              <a href="#contact">Start a Project</a>
-            </Button>
+      {/* Diagonal neon marquee */}
+      <div className="relative z-10 mt-auto">
+        <div className="-rotate-2 origin-center w-[110%] -ml-[5%] bg-primary text-primary-foreground py-5 overflow-hidden border-y border-primary/40 shadow-[0_0_60px_-10px_hsl(var(--primary)/0.6)]">
+          <div className="flex w-max animate-marquee">
+            {loop.map((item, i) => (
+              <span
+                key={i}
+                className="font-display font-semibold uppercase tracking-wide text-2xl md:text-3xl px-8 flex items-center gap-8 shrink-0"
+              >
+                <span className="text-primary-foreground/70">+</span>
+                {item}
+              </span>
+            ))}
           </div>
         </div>
+      </div>
+
+      {/* Scroll cue */}
+      <div className="relative z-10 flex flex-col items-center gap-2 py-6 font-body text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
+        <span className="block w-px h-6 bg-primary" />
+        Scroll
       </div>
     </section>
   );

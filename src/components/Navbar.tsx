@@ -24,18 +24,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border py-4"
-          : "bg-transparent py-6"
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+        isScrolled ? "scale-95" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link to="/" className="font-display font-bold text-xl text-foreground">
-          Jabir<span className="text-primary">.</span>
+      <div className="flex items-center gap-2 md:gap-6 bg-card/90 backdrop-blur-xl border border-border rounded-full pl-5 pr-2 py-2 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)]">
+        <Link
+          to="/"
+          className="flex items-center gap-2 font-display font-bold text-base md:text-lg text-foreground pr-2 md:pr-4 md:border-r border-border"
+        >
+          <span className="inline-block w-2 h-2 rounded-full bg-primary" />
+          Jabir
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {isHomePage &&
             navLinks.map((link) => (
               <a
@@ -48,14 +50,14 @@ const Navbar = () => {
             ))}
           <a
             href="#contact"
-            className="font-body text-sm bg-foreground text-background px-5 py-2 rounded-full hover:bg-foreground/90 transition-colors"
+            className="font-body text-sm bg-primary text-primary-foreground px-5 py-2 rounded-full hover:bg-primary/90 transition-colors font-medium"
           >
-            Get in touch
+            Resume ↓
           </a>
         </div>
 
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-foreground rounded-full"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
