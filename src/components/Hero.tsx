@@ -57,9 +57,9 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 flex-1 flex items-center py-12">
         <div className="w-full max-w-2xl">
           <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.95] text-[10vw] md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-            <span className="text-primary">I'm a Graphic Designer</span>
+            <span className="text-primary">I'M A GRAPHIC DESIGNER</span>
             <br />
-            <span className="text-foreground">Crafting Bold Brand Identities</span>
+            <span className="text-foreground">CRAFTING BOLD BRAND IDENTITIES</span>
           </h1>
 
           <p className="mt-8 max-w-xl font-body text-base md:text-lg text-muted-foreground leading-relaxed">
