@@ -27,11 +27,23 @@ const Hero = () => {
         }}
       />
 
+      {/* Full-bleed profile image on the right */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[55%] lg:w-[50%] flex items-end justify-end z-0"
+      >
+        <img
+          src={profileImage}
+          alt=""
+          className="h-[85%] md:h-[92%] lg:h-full w-auto object-contain object-bottom opacity-30 md:opacity-100"
+        />
+      </div>
+
       {/* Top intro line */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 pt-32 md:pt-36">
         <div className="flex items-center gap-3 font-body text-sm text-muted-foreground">
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
           </span>
           <span className="uppercase tracking-[0.25em]">
@@ -40,51 +52,30 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Main: text + photo */}
+      {/* Main: text left, image is background-positioned right */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 flex-1 flex items-center py-12">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 w-full items-center">
-          {/* Text */}
-          <div className="lg:col-span-8">
-            <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.95] text-[10vw] md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-              <span className="text-primary">I'm a Graphic Designer</span>
-              <br />
-              <span className="text-foreground">Crafting Bold Brand Identities</span>
-            </h1>
+        <div className="w-full max-w-2xl">
+          <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.95] text-[10vw] md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+            <span className="text-primary">I'm a Graphic Designer</span>
+            <br />
+            <span className="text-foreground">Crafting Bold Brand Identities</span>
+          </h1>
 
-            <p className="mt-8 max-w-xl font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-              I'm Jabir — based in Kerala. Started in production and print, found
-              my way to design. Now I build clear, considered identities that
-              turn attention into trust.
-            </p>
+          <p className="mt-8 max-w-xl font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+            I'm Jabir — based in Kerala. Started in production and print, found
+            my way to design. Now I build clear, considered identities that
+            turn attention into trust.
+          </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Kerala, India</span>
-              </div>
-              <span className="hidden md:inline">·</span>
-              <span>@jabir.mkm</span>
-              <span className="hidden md:inline">·</span>
-              <span>Muhammed Jabir A K</span>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 font-body text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              <span>Kerala, India</span>
             </div>
-          </div>
-
-          {/* Profile photo */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <div className="relative w-56 sm:w-64 md:w-72 lg:w-full max-w-[340px] aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card shadow-[0_20px_60px_-20px_hsl(var(--primary)/0.4)]">
-              <img
-                src={profileImage}
-                alt="Muhammed Jabir A K — Graphic Designer"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 rounded-full bg-background/80 backdrop-blur-md border border-border px-3 py-1.5 font-body text-xs">
-                <span className="flex items-center gap-2 text-foreground">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary" />
-                  Open to Work
-                </span>
-                <span className="text-muted-foreground">Kerala</span>
-              </div>
-            </div>
+            <span className="hidden md:inline">·</span>
+            <span>@jabir.mkm</span>
+            <span className="hidden md:inline">·</span>
+            <span>Muhammed Jabir A K</span>
           </div>
         </div>
       </div>
