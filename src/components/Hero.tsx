@@ -27,15 +27,16 @@ const Hero = () => {
         }}
       />
 
-      {/* Full-bleed profile image on the right */}
+      {/* Profile image — smaller, anchored to bottom-right */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[55%] lg:w-[50%] flex items-end justify-end z-0"
+        className="pointer-events-none absolute bottom-0 right-0 w-[60%] sm:w-[45%] md:w-[38%] lg:w-[32%] xl:w-[28%] flex items-end justify-end z-0"
+        style={{ paddingBottom: "5rem" }}
       >
         <img
           src={profileImage}
           alt=""
-          className="h-[85%] md:h-[92%] lg:h-full w-auto object-contain object-bottom opacity-30 md:opacity-100"
+          className="w-full h-auto object-contain object-bottom opacity-40 md:opacity-100"
         />
       </div>
 
