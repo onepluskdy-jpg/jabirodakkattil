@@ -7,6 +7,7 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Work", href: "#portfolio" },
+  { name: "Words", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -18,20 +19,31 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-        isScrolled ? "scale-95" : ""
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out ${
+        isScrolled ? "top-3" : "top-6"
       }`}
     >
-      <div className="flex items-center gap-2 md:gap-6 bg-card/90 backdrop-blur-xl border border-border rounded-full pl-5 pr-2 py-2 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)]">
+      <div
+        className={`flex items-center gap-2 md:gap-6 bg-card/70 backdrop-blur-2xl border border-border/60 rounded-full shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)] transition-all duration-500 ease-out ${
+          isScrolled
+            ? "pl-4 pr-1.5 py-1.5 scale-[0.92]"
+            : "pl-5 pr-2 py-2"
+        }`}
+      >
         <Link
           to="/"
-          className="flex items-center gap-2 font-display font-bold text-base md:text-lg text-foreground pr-2 md:pr-4 md:border-r border-border"
+          className={`flex items-center gap-2 font-display font-bold text-foreground border-border transition-all duration-500 ${
+            isScrolled
+              ? "text-sm md:text-base pr-2 md:pr-3 md:border-r"
+              : "text-base md:text-lg pr-2 md:pr-4 md:border-r"
+          }`}
         >
           <span className="inline-block w-2 h-2 rounded-full bg-primary" />
           Jabir
@@ -50,7 +62,9 @@ const Navbar = () => {
             ))}
           <a
             href="#contact"
-            className="font-body text-sm bg-primary text-primary-foreground px-5 py-2 rounded-full hover:bg-primary/90 transition-colors font-medium"
+            className={`font-body bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all font-medium ${
+              isScrolled ? "text-xs px-4 py-1.5" : "text-sm px-5 py-2"
+            }`}
           >
             Resume ↓
           </a>
@@ -66,7 +80,7 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-6">
+        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-card/95 backdrop-blur-xl border border-border rounded-2xl py-6">
           <div className="flex flex-col items-center gap-6">
             {isHomePage &&
               navLinks.map((link) => (
@@ -82,7 +96,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="font-body text-sm bg-foreground text-background px-5 py-2 rounded-full"
+              className="font-body text-sm bg-primary text-primary-foreground px-5 py-2 rounded-full"
             >
               Get in touch
             </a>
