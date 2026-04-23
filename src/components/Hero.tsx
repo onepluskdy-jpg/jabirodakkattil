@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 import profileImage from "@/assets/profile.png";
 
@@ -14,6 +15,24 @@ const marqueeItems = [
 
 const Hero = () => {
   const loop = [...marqueeItems, ...marqueeItems];
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setScrollY(window.scrollY));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  // Subtle parallax — portrait drifts up slightly as user scrolls.
+  const portraitTranslate = Math.min(scrollY * 0.18, 120);
+  const portraitScale = 1 + Math.min(scrollY * 0.0003, 0.05);
 
   return (
     <section className="relative min-h-screen w-full bg-background text-foreground overflow-hidden flex flex-col">
@@ -27,11 +46,15 @@ const Hero = () => {
         }}
       />
 
-      {/* Profile image — smaller, anchored to bottom-right */}
+      {/* Profile image with parallax */}
       <div
         aria-hidden
         className="pointer-events-none absolute bottom-0 right-0 w-[60%] sm:w-[45%] md:w-[38%] lg:w-[32%] xl:w-[28%] flex items-end justify-end z-0"
-        style={{ paddingBottom: "5rem" }}
+        style={{
+          paddingBottom: "5rem",
+          transform: `translate3d(0, -${portraitTranslate}px, 0) scale(${portraitScale})`,
+          transition: "transform 0.1s linear",
+        }}
       >
         <img
           src={profileImage}
@@ -42,7 +65,7 @@ const Hero = () => {
 
       {/* Top intro line */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 pt-32 md:pt-36">
-        <div className="flex items-center gap-3 font-body text-sm text-muted-foreground">
+        <div className="flex items-center gap-3 font-body text-sm text-muted-foreground animate-fade-up">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
@@ -53,9 +76,9 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Main: text left, image is background-positioned right */}
+      {/* Main */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 flex-1 flex items-center py-12">
-        <div className="w-full max-w-2xl">
+        <div className="w-full max-w-2xl animate-fade-up">
           <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.95] text-[10vw] md:text-5xl lg:text-6xl xl:text-[4.5rem]">
             <span className="text-primary">I'M A GRAPHIC DESIGNER</span>
             <br />
