@@ -106,12 +106,12 @@ const Hero = () => {
 
       {/* Diagonal neon marquee */}
       <div className="relative z-10 mt-auto">
-        <div className="-rotate-2 origin-center w-[110%] -ml-[5%] bg-primary text-primary-foreground py-4 overflow-hidden border-y border-primary/40 shadow-[0_0_60px_-10px_hsl(var(--primary)/0.6)]">
+        <div className="-rotate-2 origin-center w-[110%] -ml-[5%] bg-primary text-primary-foreground py-7 md:py-9 overflow-hidden border-y border-primary/40 shadow-[0_0_60px_-10px_hsl(var(--primary)/0.6)]">
           <div className="flex w-max animate-marquee">
             {loop.map((item, i) => (
               <span
                 key={i}
-                className="font-display font-semibold uppercase tracking-wide text-xl md:text-2xl px-8 flex items-center gap-8 shrink-0"
+                className="font-display font-semibold uppercase tracking-wide text-3xl md:text-4xl lg:text-5xl px-10 flex items-center gap-10 shrink-0"
               >
                 <span className="text-primary-foreground/70">+</span>
                 {item}
