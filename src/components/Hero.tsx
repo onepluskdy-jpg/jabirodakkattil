@@ -46,12 +46,12 @@ const Hero = () => {
         }}
       />
 
-      {/* Profile image with parallax */}
+      {/* Profile image with parallax — bottom sits on the green marquee line */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 w-[85%] sm:w-[65%] md:w-[55%] lg:w-[48%] xl:w-[42%] flex items-end justify-end z-0"
+        className="pointer-events-none absolute right-0 w-[85%] sm:w-[65%] md:w-[55%] lg:w-[48%] xl:w-[42%] flex items-end justify-end z-0"
         style={{
-          paddingBottom: "5rem",
+          bottom: "5.5rem",
           transform: `translate3d(0, -${portraitTranslate}px, 0) scale(${portraitScale})`,
           transition: "transform 0.1s linear",
         }}
@@ -59,7 +59,7 @@ const Hero = () => {
         <img
           src={profileImage}
           alt="Jabir portrait"
-          className="w-full h-auto object-contain object-bottom opacity-90 md:opacity-100"
+          className="w-full h-auto object-contain object-bottom opacity-95 md:opacity-100"
         />
       </div>
 
