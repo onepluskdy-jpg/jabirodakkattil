@@ -49,7 +49,7 @@ const Hero = () => {
       {/* Profile image with parallax */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 w-[60%] sm:w-[45%] md:w-[38%] lg:w-[32%] xl:w-[28%] flex items-end justify-end z-0"
+        className="pointer-events-none absolute bottom-0 right-0 w-[85%] sm:w-[65%] md:w-[55%] lg:w-[48%] xl:w-[42%] flex items-end justify-end z-0"
         style={{
           paddingBottom: "5rem",
           transform: `translate3d(0, -${portraitTranslate}px, 0) scale(${portraitScale})`,
