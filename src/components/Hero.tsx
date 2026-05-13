@@ -46,13 +46,13 @@ const Hero = () => {
         }}
       />
 
-      {/* Profile image with parallax — centered horizontally, bottom sits on the green marquee line */}
+      {/* Profile image with parallax — right side, bottom sits on the green marquee line */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[85%] sm:w-[65%] md:w-[55%] lg:w-[48%] xl:w-[42%] flex items-end justify-center z-0"
+        className="pointer-events-none absolute right-0 w-[70%] sm:w-[55%] md:w-[48%] lg:w-[42%] xl:w-[38%] flex items-end justify-end z-0"
         style={{
           bottom: "2rem",
-          transform: `translate3d(-50%, -${portraitTranslate}px, 0) scale(${portraitScale})`,
+          transform: `translate3d(0, -${portraitTranslate}px, 0) scale(${portraitScale})`,
           transition: "transform 0.1s linear",
         }}
       >
