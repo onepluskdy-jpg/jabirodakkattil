@@ -13,11 +13,31 @@ const CaseStudy = () => {
     .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
     .join(" ");
 
+  const canonical = `https://jabirodakkattil.lovable.app/case-study/${slug ?? ""}`;
+  const pageTitle = `${title} — Case Study · Jabir Odakkattil`;
+  const pageDesc = `${title} case study by Jabir Odakkattil — process, outcome, and selected work from a Kerala-based graphic designer.`;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonical} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: title,
+          creator: { "@type": "Person", name: "Muhammed Jabir A K" },
+          url: canonical,
+        })}</script>
+      </Helmet>
       <Navbar />
 
-      <article className="pt-32 md:pt-40 pb-24 px-6 md:px-12">
+      <main className="pt-32 md:pt-40 pb-24 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
           <Link
             to="/#portfolio"
