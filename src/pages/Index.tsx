@@ -5,6 +5,7 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
+import Seasonal from "@/components/Seasonal";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
         <Skills />
         <Experience />
         <Portfolio />
+        <Seasonal />
         <Testimonials />
         <Contact />
       </main>
