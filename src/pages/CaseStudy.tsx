@@ -137,7 +137,7 @@ const CaseStudy = () => {
             </div>
           </Reveal>
         </div>
-      </article>
+      </main>
 
       <Footer />
     </div>
