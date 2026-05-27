@@ -58,7 +58,11 @@ const Hero = () => {
       >
         <img
           src={profileImage}
-          alt="Jabir portrait"
+          alt="Portrait of Jabir Odakkattil, graphic designer"
+          width={1280}
+          height={1920}
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-auto object-contain object-bottom opacity-95 md:opacity-100"
         />
       </div>
