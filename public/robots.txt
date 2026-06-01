@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://jabirodakkattil.lovable.app/sitemap.xml
+Sitemap: https://jabirodakkattil.in/robots.txt
