@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Quote } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 const testimonials = [
   {
