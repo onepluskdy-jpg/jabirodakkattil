@@ -3,6 +3,7 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProjectLightbox from "./ProjectLightbox";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 // Import portfolio images
 import fezinnHotel from "@/assets/portfolio/fezinn-hotel.jpg";
