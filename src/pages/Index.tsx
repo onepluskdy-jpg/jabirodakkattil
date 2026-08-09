@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
@@ -15,9 +16,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <About />
-        <Skills />
         <Experience />
+        <Skills />
         <Portfolio />
         <Seasonal />
         <Testimonials />
@@ -29,3 +31,4 @@ const Index = () => {
 };
 
 export default Index;
+
