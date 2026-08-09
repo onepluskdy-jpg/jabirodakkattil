@@ -1,5 +1,6 @@
 import { Calendar, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 import eidAdha from "@/assets/seasonal/eid-adha.png";
 
 interface SeasonalPost {
