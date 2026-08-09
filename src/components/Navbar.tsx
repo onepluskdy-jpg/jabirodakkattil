@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { name: "About", href: "#about" },
+  { name: "Work", href: "#experience" },
   { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Work", href: "#portfolio" },
-  { name: "Words", href: "#testimonials" },
+  { name: "Projects", href: "#portfolio" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -18,60 +17,54 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out ${
-        isScrolled ? "top-3" : "top-6"
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/85 backdrop-blur-xl border-b border-border"
+          : "bg-transparent"
       }`}
     >
-      <div
-        className={`flex items-center gap-2 md:gap-6 bg-card/70 backdrop-blur-2xl border border-border/60 rounded-full shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)] transition-all duration-500 ease-out ${
-          isScrolled
-            ? "pl-4 pr-1.5 py-1.5 scale-[0.92]"
-            : "pl-5 pr-2 py-2"
-        }`}
-      >
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between gap-4">
         <Link
           to="/"
-          className={`flex items-center gap-2 font-display font-bold text-foreground border-border transition-all duration-500 ${
-            isScrolled
-              ? "text-sm md:text-base pr-2 md:pr-3 md:border-r"
-              : "text-base md:text-lg pr-2 md:pr-4 md:border-r"
-          }`}
+          className="flex items-center gap-3 font-display uppercase tracking-wide text-foreground"
         >
-          <span className="inline-block w-2 h-2 rounded-full bg-primary" />
-          Jabir
+          <span className="w-8 h-8 rounded-lg bg-primary text-primary-foreground grid place-items-center text-sm">
+            J
+          </span>
+          <span className="text-base md:text-lg">Jabir A K</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
-          {isHomePage &&
-            navLinks.map((link) => (
+        {isHomePage && (
+          <nav className="hidden md:flex items-center gap-8 rounded-full border border-border bg-card/60 backdrop-blur-xl px-7 py-2.5">
+            {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
             ))}
-          <a
-            href="#contact"
-            className={`font-body bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all font-medium ${
-              isScrolled ? "text-xs px-4 py-1.5" : "text-sm px-5 py-2"
-            }`}
-          >
-            Resume ↓
-          </a>
-        </div>
+          </nav>
+        )}
+
+        <a
+          href="#contact"
+          className="hidden md:inline-flex items-center gap-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground rounded-full px-5 py-2.5 hover:bg-primary/90 transition-colors"
+        >
+          Let's talk <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
 
         <button
-          className="md:hidden p-2 text-foreground rounded-full"
+          className="md:hidden p-2 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -80,14 +73,14 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-card/95 backdrop-blur-xl border border-border rounded-2xl py-6">
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl py-8">
           <div className="flex flex-col items-center gap-6">
             {isHomePage &&
               navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="font-body text-lg text-muted-foreground hover:text-foreground transition-colors"
+                  className="font-display uppercase text-2xl text-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -96,14 +89,14 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="font-body text-sm bg-primary text-primary-foreground px-5 py-2 rounded-full"
+              className="font-body text-[11px] uppercase tracking-[0.2em] bg-primary text-primary-foreground px-6 py-3 rounded-full"
             >
-              Get in touch
+              Let's talk
             </a>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 
