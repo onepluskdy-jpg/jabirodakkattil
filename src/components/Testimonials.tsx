@@ -55,23 +55,14 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 md:py-32 px-6 md:px-12 border-t border-border"
+      className="py-20 md:py-28 px-6 md:px-12 border-t border-border"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-3">
-            <Reveal>
-              <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Words
-              </span>
-            </Reveal>
-          </div>
+      <div className="max-w-[1400px] mx-auto">
+        <SectionHeader index="07" title="Kind Words" />
+        <div className="grid lg:grid-cols-12 gap-12 mt-14">
+          <div className="lg:col-span-3" />
           <div className="lg:col-span-9">
-            <Reveal>
-              <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground mb-16">
-                Kind notes from people I've worked with.
-              </h2>
-            </Reveal>
+
 
             <Reveal delay={120}>
               <div className="relative min-h-[260px] md:min-h-[200px]">
