@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 const skills = [
   "Branding & Visual Identity",
@@ -23,60 +24,42 @@ const tools = [
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="py-24 md:py-32 px-6 md:px-12 border-t border-border"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-3">
-            <Reveal>
-              <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Capabilities
-              </span>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-9">
-            <Reveal>
-              <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground mb-16">
-                What I do.
-              </h2>
-            </Reveal>
+    <section id="skills" className="py-20 md:py-28 px-6 md:px-12 border-t border-border">
+      <div className="max-w-[1400px] mx-auto">
+        <SectionHeader index="03" title="Core Skills" />
 
-            <ul className="divide-y divide-border border-y border-border">
-              {skills.map((skill, i) => (
-                <Reveal as="li" key={skill} delay={i * 60}>
-                  <div className="flex items-center justify-between py-6 group">
-                    <span className="font-display font-medium text-2xl md:text-3xl text-foreground group-hover:text-primary transition-colors">
-                      {skill}
-                    </span>
-                    <span className="font-body text-sm text-muted-foreground tabular-nums">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                </Reveal>
-              ))}
-            </ul>
-
-            {/* Tools */}
-            <Reveal delay={120}>
-              <div className="mt-20">
-                <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground block mb-6">
-                  Tools
+        <div className="mt-14 grid md:grid-cols-2 gap-x-16">
+          {skills.map((skill, i) => (
+            <Reveal key={skill} delay={i * 50}>
+              <div className="flex items-center justify-between gap-6 py-6 border-b border-border group">
+                <span className="font-display uppercase text-xl md:text-3xl text-foreground group-hover:text-primary transition-colors">
+                  {skill}
                 </span>
-                <div className="flex flex-wrap gap-x-6 gap-y-3">
-                  {tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="font-display text-xl md:text-2xl text-foreground"
-                    >
-                      {tool}
-                      <span className="text-muted-foreground ml-6">·</span>
-                    </span>
-                  ))}
-                </div>
+                <span className="font-body text-xs text-muted-foreground tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
             </Reveal>
+          ))}
+        </div>
+
+        {/* Tools */}
+        <div className="mt-20">
+          <Reveal>
+            <span className="font-body text-[11px] uppercase tracking-[0.3em] text-muted-foreground block mb-8">
+              Software
+            </span>
+          </Reveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {tools.map((tool, i) => (
+              <Reveal key={tool} delay={i * 60}>
+                <div className="rounded-xl border border-border bg-card px-4 py-6 text-center hover:border-primary/60 transition-colors">
+                  <span className="font-display uppercase text-base md:text-lg text-foreground">
+                    {tool}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </div>

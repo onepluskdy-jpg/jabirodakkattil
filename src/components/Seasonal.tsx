@@ -1,5 +1,6 @@
 import { Calendar, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 import eidAdha from "@/assets/seasonal/eid-adha.png";
 
 interface SeasonalPost {
@@ -30,7 +31,7 @@ const rest = posts.filter((p) => p !== featured);
 
 const Seasonal = () => {
   return (
-    <section id="seasonal" className="relative py-24 md:py-32 bg-background overflow-hidden">
+    <section id="seasonal" className="relative py-20 md:py-28 bg-background overflow-hidden border-t border-border">
       {/* Subtle radial accent */}
       <div
         aria-hidden
@@ -41,25 +42,21 @@ const Seasonal = () => {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
+        <SectionHeader index="05" title="Festival Greetings" />
         <Reveal>
-          <div className="flex items-end justify-between flex-wrap gap-6 mb-12">
-            <div>
-              <div className="flex items-center gap-3 font-body text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
-                <Calendar className="w-4 h-4 text-primary" />
-                Festival Greetings
-              </div>
-              <h2 className="font-display font-extrabold uppercase tracking-tight leading-[0.95] text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-                Greetings, festivals <br />
-                <span className="text-primary">& cultural moments.</span>
-              </h2>
-            </div>
+          <div className="flex items-end justify-between flex-wrap gap-6 mt-14 mb-12">
+            <h3 className="font-display uppercase leading-[0.95] text-3xl md:text-5xl max-w-2xl">
+              Greetings, festivals <br />
+              <span className="text-primary glow-primary">& cultural moments.</span>
+            </h3>
             <p className="font-body text-base text-muted-foreground max-w-md">
               Seasonal creatives crafted for Eid, Onam, Ramadan and other
               cultural moments — designed to feel rooted, modern and shareable.
             </p>
           </div>
         </Reveal>
+
 
         {/* Featured greeting — hero style */}
         <Reveal>

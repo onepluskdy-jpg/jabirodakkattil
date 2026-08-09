@@ -3,6 +3,7 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProjectLightbox from "./ProjectLightbox";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 // Import portfolio images
 import fezinnHotel from "@/assets/portfolio/fezinn-hotel.jpg";
@@ -98,37 +99,21 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="py-24 md:py-32 px-6 md:px-12 border-t border-border"
+      className="py-20 md:py-28 px-6 md:px-12 border-t border-border"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="grid lg:grid-cols-12 gap-12 mb-16">
-          <div className="lg:col-span-3">
-            <Reveal>
-              <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Selected Work
-              </span>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-9">
-            <Reveal>
-              <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground">
-                Projects.
-              </h2>
-            </Reveal>
-          </div>
-        </div>
+      <div className="max-w-[1400px] mx-auto">
+        <SectionHeader index="04" title="Selected Projects" />
 
         {/* Filter */}
         <Reveal>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 my-12">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full font-body text-sm transition-all duration-300 border ${
+                className={`px-4 py-2 rounded-full font-body text-[11px] uppercase tracking-[0.2em] transition-all duration-300 border ${
                   activeCategory === category
-                    ? "bg-foreground text-background border-foreground"
+                    ? "bg-primary text-primary-foreground border-primary"
                     : "bg-transparent text-muted-foreground border-border hover:text-foreground hover:border-foreground/40"
                 }`}
               >
@@ -137,6 +122,7 @@ const Portfolio = () => {
             ))}
           </div>
         </Reveal>
+
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-6 auto-rows-[280px] gap-4 md:gap-5">

@@ -1,24 +1,23 @@
 import { ArrowUpRight } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 md:px-12 border-t border-border">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-3">
-            <span className="font-body text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Contact
-            </span>
-          </div>
-          <div className="lg:col-span-9">
-            <h2 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-foreground mb-12">
-              Have a project<br />in mind?
-            </h2>
-
-            <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mb-16">
-              Available for freelance, contract, and collaborative work. Reach out
-              and let's build something worth looking at.
+    <section id="contact" className="py-20 md:py-28 px-6 md:px-12 border-t border-border">
+      <div className="max-w-[1400px] mx-auto">
+        <SectionHeader index="06" title="Contact" />
+        <div className="grid lg:grid-cols-12 gap-12 mt-14">
+          <div className="lg:col-span-4">
+            <p className="font-body text-base text-muted-foreground max-w-sm">
+              Available for freelance, contract, and collaborative work. Reach
+              out and let's build something worth looking at.
             </p>
+          </div>
+          <div className="lg:col-span-8">
+            <h3 className="font-display uppercase text-4xl md:text-6xl lg:text-7xl leading-[0.95] text-foreground mb-12">
+              Have a project<br /><span className="text-primary glow-primary">in mind?</span>
+            </h3>
+
 
             {/* Contact rows */}
             <ul className="divide-y divide-border border-y border-border">
