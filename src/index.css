@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -39,7 +39,7 @@
     --gradient-primary: linear-gradient(135deg, hsl(18 100% 56%) 0%, hsl(32 100% 58%) 100%);
     --glow-primary: 0 0 40px hsl(var(--primary) / 0.35);
 
-    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-display: 'Anton', Impact, sans-serif;
     --font-body: 'Work Sans', sans-serif;
   }
 

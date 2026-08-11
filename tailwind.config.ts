@@ -49,7 +49,7 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Instrument Serif', 'Georgia', 'serif'],
+        display: ['Anton', 'Impact', 'sans-serif'],
         body: ['Work Sans', 'sans-serif'],
         sans: ['Work Sans', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
