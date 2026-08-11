@@ -1,8 +1,8 @@
 # Project Memory
 
 ## Core
-Design language mirrors junaidprotfolio.lovable.app: pure black bg (0 0% 2%), neon-yellow accent (HSL 54 100% 55%), blueprint grid backdrop, glow-primary text shadow on accent words.
-Anton (display, uppercase condensed) + Poppins (body). Never Inter/Poppins headings.
+Palette: warm charcoal bg (20 12% 4%), molten-orange accent (HSL 18 100% 56%), cream foreground (28 46% 93%), blueprint grid backdrop, glow-primary text shadow on accent words.
+Instrument Serif (display, high-contrast serif, often uppercase) + Work Sans (body). Never Inter/Poppins/Anton.
 Hero = full-screen "PORT" white + "FOLIO" yellow glow, eyebrow "GRAPHIC DESIGNER · PORTFOLIO 2026", stats 03+/80+, bottom meta bar. No portrait in hero — portrait lives in About card with "Available for work" pill.
 Section headers use SectionHeader component: "/ NN  TITLE" + right meta "Muhammed Jabir A K · Portfolio 2026" + hairline rule.
 Star marquee strip (Branding ★ Packaging ★ Editorial…) sits directly under hero.
