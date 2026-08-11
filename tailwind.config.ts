@@ -49,9 +49,9 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Anton', 'Impact', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
-        sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        display: ['Instrument Serif', 'Georgia', 'serif'],
+        body: ['Work Sans', 'sans-serif'],
+        sans: ['Work Sans', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
       borderRadius: {
         lg: 'var(--radius)',
