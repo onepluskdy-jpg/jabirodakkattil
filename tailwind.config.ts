@@ -49,7 +49,7 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Anton', 'Impact', 'sans-serif'],
+        display: ['Space Grotesk', 'Instrument Serif', 'sans-serif'],
         body: ['Work Sans', 'sans-serif'],
         sans: ['Work Sans', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
