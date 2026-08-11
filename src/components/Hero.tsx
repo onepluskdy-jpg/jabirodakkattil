@@ -42,7 +42,7 @@ const Hero = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display uppercase leading-[0.82] tracking-tight text-[19vw] md:text-[15vw] lg:text-[13rem]">
+          <h1 className="font-display uppercase leading-[0.85] tracking-[0.02em] text-[18vw] md:text-[14vw] lg:text-[12rem]">
             <span className="text-foreground">Port</span>
             <span className="text-primary glow-primary">folio</span>
           </h1>
