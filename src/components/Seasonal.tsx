@@ -1,7 +1,8 @@
-import { Calendar, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 import eidAdha from "@/assets/seasonal/eid-adha.png";
+import onam2026 from "@/assets/seasonal/onam-2026.png";
 
 interface SeasonalPost {
   occasion: string;
@@ -11,9 +12,21 @@ interface SeasonalPost {
   image: string;
   alt: string;
   featured?: boolean;
+  tags?: string[];
 }
 
 const posts: SeasonalPost[] = [
+  {
+    occasion: "Onam",
+    date: "2026",
+    title: "Onam 2026",
+    description:
+      "A vibrant Onam greeting celebrating the harvest festival of Kerala — featuring King Mahabali, traditional architecture, and warm festive colours.",
+    image: onam2026,
+    alt: "Onam 2026 greeting poster — stylised King Mahabali on a Kerala balcony with Malayalam typography and blue sky",
+    featured: true,
+    tags: ["Poster", "Social", "Malayalam Typography"],
+  },
   {
     occasion: "Eid al-Adha",
     date: "2025",
@@ -22,9 +35,10 @@ const posts: SeasonalPost[] = [
       "A playful seasonal greeting blending traditional Arabic typography with a bold, contemporary character — designed for social.",
     image: eidAdha,
     alt: "Eid al-Adha greeting poster — Arabic calligraphy with a stylised sheep character on a red field",
-    featured: true,
+    tags: ["Poster", "Social", "Arabic Typography"],
   },
 ];
+
 
 const featured = posts.find((p) => p.featured) ?? posts[0];
 const rest = posts.filter((p) => p !== featured);
@@ -78,9 +92,15 @@ const Seasonal = () => {
               </div>
 
               <h3 className="font-display font-extrabold uppercase leading-[0.95] tracking-tight text-5xl md:text-6xl lg:text-7xl mb-6">
-                <span className="text-primary">Eid</span>
-                <br />
-                <span className="text-foreground">Mubarak</span>
+                {featured.title.split(" ").length > 1 ? (
+                  <>
+                    <span className="text-primary">{featured.title.split(" ")[0]}</span>
+                    <br />
+                    <span className="text-foreground">{featured.title.split(" ").slice(1).join(" ")}</span>
+                  </>
+                ) : (
+                  <span className="text-primary">{featured.title}</span>
+                )}
               </h3>
 
               <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-md mb-8">
@@ -88,15 +108,18 @@ const Seasonal = () => {
               </p>
 
               <div className="flex flex-wrap gap-2 font-body text-[11px] uppercase tracking-[0.25em]">
-                <span className="px-3 py-1.5 rounded-full border border-border/70 text-muted-foreground">
-                  Poster
-                </span>
-                <span className="px-3 py-1.5 rounded-full border border-border/70 text-muted-foreground">
-                  Social
-                </span>
-                <span className="px-3 py-1.5 rounded-full border border-primary/40 text-primary">
-                  Arabic Typography
-                </span>
+                {featured.tags?.map((tag, i) => (
+                  <span
+                    key={i}
+                    className={`px-3 py-1.5 rounded-full border ${
+                      i === (featured.tags?.length ?? 0) - 1
+                        ? "border-primary/40 text-primary"
+                        : "border-border/70 text-muted-foreground"
+                    }`}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </article>
