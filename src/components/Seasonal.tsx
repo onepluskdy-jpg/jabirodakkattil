@@ -2,7 +2,7 @@ import { Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 import eidAdha from "@/assets/seasonal/eid-adha.png";
-import onam2026 from "@/assets/seasonal/onam-2026.png.asset.json";
+import onam2026 from "@/assets/seasonal/onam-2026.png";
 
 interface SeasonalPost {
   occasion: string;
