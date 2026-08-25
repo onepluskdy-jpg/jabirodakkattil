@@ -1,7 +1,8 @@
-import { Calendar, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 import eidAdha from "@/assets/seasonal/eid-adha.png";
+import onam2026 from "@/assets/seasonal/onam-2026.png.asset.json";
 
 interface SeasonalPost {
   occasion: string;
@@ -11,9 +12,21 @@ interface SeasonalPost {
   image: string;
   alt: string;
   featured?: boolean;
+  tags?: string[];
 }
 
 const posts: SeasonalPost[] = [
+  {
+    occasion: "Onam",
+    date: "2026",
+    title: "Onam 2026",
+    description:
+      "A vibrant Onam greeting celebrating the harvest festival of Kerala — featuring King Mahabali, traditional architecture, and warm festive colours.",
+    image: onam2026.url,
+    alt: "Onam 2026 greeting poster — stylised King Mahabali on a Kerala balcony with Malayalam typography and blue sky",
+    featured: true,
+    tags: ["Poster", "Social", "Malayalam Typography"],
+  },
   {
     occasion: "Eid al-Adha",
     date: "2025",
@@ -22,9 +35,10 @@ const posts: SeasonalPost[] = [
       "A playful seasonal greeting blending traditional Arabic typography with a bold, contemporary character — designed for social.",
     image: eidAdha,
     alt: "Eid al-Adha greeting poster — Arabic calligraphy with a stylised sheep character on a red field",
-    featured: true,
+    tags: ["Poster", "Social", "Arabic Typography"],
   },
 ];
+
 
 const featured = posts.find((p) => p.featured) ?? posts[0];
 const rest = posts.filter((p) => p !== featured);
