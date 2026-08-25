@@ -22,7 +22,7 @@ const posts: SeasonalPost[] = [
     title: "Onam 2026",
     description:
       "A vibrant Onam greeting celebrating the harvest festival of Kerala — featuring King Mahabali, traditional architecture, and warm festive colours.",
-    image: onam2026.url,
+    image: onam2026,
     alt: "Onam 2026 greeting poster — stylised King Mahabali on a Kerala balcony with Malayalam typography and blue sky",
     featured: true,
     tags: ["Poster", "Social", "Malayalam Typography"],
