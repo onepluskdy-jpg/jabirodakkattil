@@ -1,41 +1,57 @@
-# Add your LinkedIn profile to the Contact section
+# Add your LinkedIn profile and update your contact details
 
 ## What will change
 
-A new **LinkedIn** row is added to the contact list on your page, sitting alongside the
-existing Email, Phone, Instagram and Behance rows. It looks and behaves exactly like the
-others: small uppercase label, large name, and an arrow that lifts on hover. Clicking it
-opens your LinkedIn profile in a new browser tab.
+Three things on your page:
 
-The link points to your profile address, with the sharing tracking text removed:
-`https://www.linkedin.com/in/muhammad-jabir-8023b1260`
+1. **New LinkedIn row** in the contact list, alongside Email, Phone, Instagram and Behance.
+   Same style as the others — small uppercase label, large name, arrow that lifts on
+   hover. Clicking opens your profile in a new browser tab.
+2. **New email everywhere it appears**: `jabirodakkattil.in@gmail.com`
+3. **New phone everywhere it appears**: `+91 89518 60301`
 
-Nothing else moves — the top bar, the About buttons, and the footer keep their current
+The email and phone are shown in two places today — the contact list near the bottom of
+the page, and the small info grid under your portrait in the About section. Both places
+get the new values, including the tap-to-call and tap-to-mail links.
+
+Nothing else moves: the top bar, the About buttons, and the footer keep their current
 links.
 
 ## Layout
 
 ```text
-Email        muhammedjabirmkm@gmail.com      ↗
-Phone        +91 70124 18488                 ↗
+Email        jabirodakkattil.in@gmail.com    ↗   <- new address
+Phone        +91 89518 60301                 ↗   <- new number
 Instagram    @jabir.mkm                      ↗
 Behance      jabirmuhamme                    ↗
-LinkedIn     muhammad-jabir                  ↗   <- new
+LinkedIn     muhammad-jabir                  ↗   <- new row
+
+About info grid:  Email  jabirodakkattil.in@gmail.com   <- new address
+                  Phone  +91 89518 60301                <- new number
 ```
 
 ## Technical details
 
-- File: `src/components/Contact.tsx` — one new `<li>` appended to the existing
-  `divide-y divide-border border-y border-border` list, reusing the same markup and
-  classes as the Instagram and Behance rows (`font-display text-2xl md:text-4xl`,
-  hover to `text-primary`, `ArrowUpRight` icon with the same translate transition).
-- Attributes: `target="_blank"`, `rel="noopener noreferrer"`, label `LinkedIn`,
-  value `muhammad-jabir` (the profile's own handle, matching how the other rows show
-  handles rather than full names).
-- No new packages, no backend or database changes, no other files touched.
+- `src/components/Contact.tsx`:
+  - `mailto:` href and visible text become `jabirodakkattil.in@gmail.com`.
+  - `tel:` href becomes `tel:+918951860301`, visible text `+91 89518 60301`.
+  - One new `<li>` appended to the existing `divide-y divide-border border-y border-border`
+    list, reusing the Instagram/Behance row markup and classes (`font-display
+    text-2xl md:text-4xl`, hover to `text-primary`, `ArrowUpRight` with the same
+    translate transition), `target="_blank"`, `rel="noopener noreferrer"`. Label
+    `LinkedIn`, value `muhammad-jabir` (the profile's own handle, matching how other rows
+    show handles). Link: `https://www.linkedin.com/in/muhammad-jabir-8023b1260` — the
+    sharing tracking text is dropped.
+- `src/components/About.tsx`: the `info` array's Email and Phone `value` fields get the
+  new strings.
+- Checked: the old address and number appear nowhere else (no page metadata, no search
+  listing files), so no other files need editing.
+- No new packages, no backend or database changes.
+- The new contact details will also be saved to project memory so future edits keep them.
 
 ## Verification
 
-- Re-read `Contact.tsx` and check `/tmp/observability/build-errors.log` for a clean build.
-- Load the preview and screenshot the contact section to confirm the LinkedIn row renders
-  in the same style as its neighbours, and that its link resolves to the address above.
+- Re-read both files and check `/tmp/observability/build-errors.log` for a clean build.
+- Load the preview and screenshot the contact section and the About info grid to confirm
+  the new email, phone and LinkedIn row render in the same style as their neighbours, and
+  that the LinkedIn, `mailto:` and `tel:` links carry the exact values above.
