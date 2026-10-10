@@ -23,7 +23,7 @@ const Contact = () => {
             <ul className="divide-y divide-border border-y border-border">
               <li>
                 <a
-                  href="mailto:muhammedjabirmkm@gmail.com"
+                  href="mailto:jabirodakkattil.in@gmail.com"
                   className="flex items-center justify-between py-6 group"
                 >
                   <div>
@@ -31,7 +31,7 @@ const Contact = () => {
                       Email
                     </span>
                     <span className="font-display text-2xl md:text-4xl text-foreground group-hover:text-primary transition-colors">
-                      muhammedjabirmkm@gmail.com
+                      jabirodakkattil.in@gmail.com
                     </span>
                   </div>
                   <ArrowUpRight className="w-7 h-7 text-muted-foreground group-hover:text-primary group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
@@ -39,7 +39,7 @@ const Contact = () => {
               </li>
               <li>
                 <a
-                  href="tel:+917012418488"
+                  href="tel:+918951860301"
                   className="flex items-center justify-between py-6 group"
                 >
                   <div>
@@ -47,7 +47,7 @@ const Contact = () => {
                       Phone
                     </span>
                     <span className="font-display text-2xl md:text-4xl text-foreground group-hover:text-primary transition-colors">
-                      +91 70124 18488
+                      +91 89518 60301
                     </span>
                   </div>
                   <ArrowUpRight className="w-7 h-7 text-muted-foreground group-hover:text-primary group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
@@ -84,6 +84,24 @@ const Contact = () => {
                     </span>
                     <span className="font-display text-2xl md:text-4xl text-foreground group-hover:text-primary transition-colors">
                       jabirmuhamme
+                    </span>
+                  </div>
+                  <ArrowUpRight className="w-7 h-7 text-muted-foreground group-hover:text-primary group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/muhammad-jabir-8023b1260"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between py-6 group"
+                >
+                  <div>
+                    <span className="block font-body text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">
+                      LinkedIn
+                    </span>
+                    <span className="font-display text-2xl md:text-4xl text-foreground group-hover:text-primary transition-colors">
+                      muhammad-jabir
                     </span>
                   </div>
                   <ArrowUpRight className="w-7 h-7 text-muted-foreground group-hover:text-primary group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />

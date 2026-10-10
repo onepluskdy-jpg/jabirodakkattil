@@ -12,5 +12,6 @@ Single-page with anchor links. "Hire Me" page removed — do not re-add.
 Contact uses minimal list rows (email/phone/socials), not standard contact forms.
 
 ## Memories
+- [Contact details](mem://contact/contact-details) — Current email, phone, LinkedIn, Instagram, Behance links
 - [Portfolio Strategy](mem://portfolio/content-strategy) — Categorization, sorting, and content focus for portfolio items
 - [Portfolio Lightbox](mem://portfolio/lightbox-feature) — Core interaction pattern for viewing portfolio pieces
