@@ -34,15 +34,12 @@ import zechaiEidManassery from "@/assets/portfolio/zechai-eid-manassery.jpeg";
 
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
-type Size = "sm" | "md" | "lg" | "wide" | "tall";
-
 interface Project {
   title: string;
   category: string;
   description: string;
   image: string;
   slug: string;
-  size?: Size;
 }
 
 const projects: Project[] = [
