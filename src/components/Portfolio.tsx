@@ -70,14 +70,6 @@ const projects: Project[] = [
   { title: "Vote for Basheer C", category: "Political", description: "Gradient style campaign poster for independent candidate", image: politicalPoster9, slug: "vote-basheer-c", size: "md" },
 ];
 
-const sizeClass: Record<Size, string> = {
-  sm: "md:col-span-2 md:row-span-1 aspect-[4/5]",
-  md: "md:col-span-2 md:row-span-1 aspect-[4/5]",
-  lg: "md:col-span-3 md:row-span-2 aspect-[4/5] md:aspect-auto",
-  wide: "md:col-span-3 md:row-span-1 aspect-[16/10]",
-  tall: "md:col-span-2 md:row-span-2 aspect-[3/5] md:aspect-auto",
-};
-
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
