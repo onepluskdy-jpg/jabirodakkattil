@@ -4,8 +4,8 @@ import SectionHeader from "./SectionHeader";
 import profileImage from "@/assets/profile.png";
 
 const info = [
-  { icon: Mail, label: "Email", value: "muhammedjabirmkm@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+91 70124 18488" },
+  { icon: Mail, label: "Email", value: "jabirodakkattil.in@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 89518 60301" },
   { icon: MapPin, label: "Based", value: "Kerala, IN" },
   { icon: BadgeCheck, label: "Available", value: "Q1 · 2026" },
 ];
