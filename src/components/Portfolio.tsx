@@ -124,55 +124,42 @@ const Portfolio = () => {
         </Reveal>
 
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-6 auto-rows-[280px] gap-4 md:gap-5">
+        {/* Uniform Showcase Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {filteredProjects.map((project, index) => (
             <Reveal
               key={project.slug + index}
-              delay={Math.min(index * 60, 360)}
-              className={`group relative overflow-hidden rounded-2xl bg-secondary cursor-pointer ${
-                sizeClass[project.size ?? "md"]
-              }`}
+              delay={Math.min(index * 50, 300)}
+              className="group rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-colors duration-300 cursor-pointer"
             >
-              <div
-                onClick={() => handleProjectClick(project)}
-                className="absolute inset-0"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                />
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Category chip */}
-                <div className="absolute top-4 left-4 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-body text-[10px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">
-                    <span className="w-1 h-1 rounded-full bg-primary-foreground" />
-                    {project.category}
-                  </span>
+              <div onClick={() => handleProjectClick(project)}>
+                {/* Poster */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                  />
                 </div>
 
-                {/* Title row */}
-                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex items-end justify-between gap-3">
+                {/* Meta row */}
+                <div className="flex items-start justify-between gap-3 p-4 md:p-5">
                   <div className="min-w-0">
-                    <h3 className="font-display font-semibold text-lg md:text-xl text-foreground leading-tight truncate">
+                    <h3 className="font-display font-semibold text-base md:text-lg text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2 normal-case tracking-normal">
                       {project.title}
                     </h3>
-                    <p className="mt-1 font-body text-xs text-muted-foreground line-clamp-1">
-                      {project.description}
+                    <p className="mt-1 font-body text-xs text-muted-foreground truncate">
+                      {project.category}
                     </p>
                   </div>
                   <Link
                     to={`/case-study/${project.slug}`}
                     onClick={(e) => e.stopPropagation()}
                     aria-label={`Open case study for ${project.title}`}
-                    className="shrink-0 w-10 h-10 rounded-full bg-card/80 backdrop-blur border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                    className="shrink-0 mt-0.5 text-primary hover:text-foreground transition-colors"
                   >
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-5 h-5" />
                   </Link>
                 </div>
               </div>
