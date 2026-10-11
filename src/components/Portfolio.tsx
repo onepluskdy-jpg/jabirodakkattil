@@ -31,6 +31,14 @@ import zechaiEidThaliparamba from "@/assets/portfolio/zechai-eid-thaliparamba.jp
 import zechaiTimeChange from "@/assets/portfolio/zechai-time-change.jpeg";
 import zechaiEidCup from "@/assets/portfolio/zechai-eid-cup.jpeg";
 import zechaiEidManassery from "@/assets/portfolio/zechai-eid-manassery.jpeg";
+import admiNew1 from "@/assets/projects/admi-new-1.jpg";
+import admi4 from "@/assets/projects/admi-4.jpg";
+import admi6 from "@/assets/projects/admi-6.jpg";
+import admission3 from "@/assets/projects/admission-3.jpg";
+import admissionBag from "@/assets/projects/admission-bag.jpg";
+import admissionKilthan from "@/assets/projects/admission-kilthan.jpg";
+import temp01 from "@/assets/projects/temp-01.jpg";
+import zAdmi1 from "@/assets/projects/z-admi-1.jpg";
 
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
