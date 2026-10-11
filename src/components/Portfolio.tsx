@@ -31,14 +31,6 @@ import zechaiEidThaliparamba from "@/assets/portfolio/zechai-eid-thaliparamba.jp
 import zechaiTimeChange from "@/assets/portfolio/zechai-time-change.jpeg";
 import zechaiEidCup from "@/assets/portfolio/zechai-eid-cup.jpeg";
 import zechaiEidManassery from "@/assets/portfolio/zechai-eid-manassery.jpeg";
-import admiNew1 from "@/assets/projects/admi-new-1.jpg";
-import admi4 from "@/assets/projects/admi-4.jpg";
-import admi6 from "@/assets/projects/admi-6.jpg";
-import admission3 from "@/assets/projects/admission-3.jpg";
-import admissionBag from "@/assets/projects/admission-bag.jpg";
-import admissionKilthan from "@/assets/projects/admission-kilthan.jpg";
-import temp01 from "@/assets/projects/temp-01.jpg";
-import zAdmi1 from "@/assets/projects/z-admi-1.jpg";
 
 const categories = ["All", "Branding", "Social Media", "Print", "Packaging", "Political"];
 
@@ -51,14 +43,6 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { title: "Admission Open 2025", category: "Print", description: "Admission campaign poster design", image: admiNew1, slug: "admission-open-2025" },
-  { title: "Admission Campaign - Square", category: "Social Media", description: "Square-format admission announcement design", image: admi4, slug: "admission-square" },
-  { title: "Admission Campaign - Portrait", category: "Social Media", description: "High-resolution admission promotion design", image: admi6, slug: "admission-portrait" },
-  { title: "Admission Poster Vol. 3", category: "Print", description: "Print admission poster series", image: admission3, slug: "admission-vol-3" },
-  { title: "Admission - Bag Creative", category: "Print", description: "Admission campaign creative featuring school bag", image: admissionBag, slug: "admission-bag" },
-  { title: "Admission - Kilthan", category: "Print", description: "Admission campaign poster for Kilthan", image: admissionKilthan, slug: "admission-kilthan" },
-  { title: "Template Design 01", category: "Social Media", description: "Social media template design", image: temp01, slug: "template-01" },
-  { title: "Admission Announcement", category: "Social Media", description: "Admission announcement creative", image: zAdmi1, slug: "admission-announcement" },
   { title: "Zé Cha! Lakshadweep Opening", category: "Social Media", description: "New location opening announcement for Lakshadweep", image: zechaiLakshadweep, slug: "zecha-lakshadweep" },
   { title: "Zé Cha! Palakkad Delivery", category: "Social Media", description: "Zomato & Swiggy delivery app promotion for Palakkad branch", image: zechaiPalakkadDelivery, slug: "zecha-palakkad-delivery" },
   { title: "Zé Cha! Eid Mubarak - Palakkad", category: "Social Media", description: "Eid festival greeting design for Palakkad branch", image: zechaiEidPalakkad, slug: "zecha-eid-palakkad" },
